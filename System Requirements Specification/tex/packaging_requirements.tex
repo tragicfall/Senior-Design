@@ -1,13 +1,30 @@
-Include a header paragraph here. Packaging requirements are those requirements that identify how the delivered product will be packaged for delivery to the end-user; or how it will "look" when finished and delivered. For example, you might specify that the software required for operation will be pre-loaded on the hard drive, delivered on CD/DVD, or available via download. Software might be customer installable, or not, etc. Hardware components could be all in a single package, provided as a "bag of parts" to be assembled/installed by the user, painted a certain color, logos affixed, etc. Care should be taken not to duplicate requirements found in other sections of this document.
+% Durability
+% Compactness
+% Labeling
+% Assembly Instructions
 
-\subsection{Requirement Name}
+% Include a header paragraph here. Packaging requirements are those requirements that identify how the delivered product will be packaged for delivery to the end-user; or how it will "look" when finished and delivered. For example, you might specify that the software required for operation will be pre-loaded on the hard drive, delivered on CD/DVD, or available via download. Software might be customer installable, or not, etc. Hardware components could be all in a single package, provided as a "bag of parts" to be assembled/installed by the user, painted a certain color, logos affixed, etc. Care should be taken not to duplicate requirements found in other sections of this document.
+
+As for delivery to the user, the rover will be packaged without a battery, thus the user must plug in batteries to be able to use it. The software for the motion of the rover will be pre-loaded and shipped with the rover. The hardware in of itself will be shipped assembled, that is, completely assembled, complete with the underlying software. The user will be provided with an interface to control speed, direction and choose which path-finding algorithm to use to see their action in real time. Batteries are to be packaged separately due to their lithium content.
+
+\subsection{Fragile Packaging}
 \subsubsection{Description}
-Detailed requirement description...
+Package when shipped must be handled with care due to the circuitry within it.
 \subsubsection{Source}
-Source
+Team TLC
 \subsubsection{Constraints}
-Detailed description of applicable constraints...
-\subsubsection{Standards}
-List of applicable standards
+All metal and contact points should be insulated and covered. There must also be insulating cushioning material for packing so that the circuits do not get damaged in shipping. The large size of the rover also means shipping costs will be high.
 \subsubsection{Priority}
-Priority
+Priority: Moderate (3)
+
+\subsection{Lithium Battery Shipping}
+\subsubsection{Description}
+Batteries will be shipped in a separate package.
+\subsubsection{Source}
+Pipeline and Hazardous Materials Safety Administration, US Department of Transportation.
+\subsubsection{Constraints}
+Lithium batteries are explosive and hence hazardous.
+\subsubsection{Standards}
+UN3480 LITHIUM ION BATTERIES \cite{PHMSA}
+\subsubsection{Priority}
+Priority Level: High (2)

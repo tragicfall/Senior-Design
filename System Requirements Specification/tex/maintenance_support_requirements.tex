@@ -1,13 +1,79 @@
-Include a header paragraph specific to your product here. Maintenance and support requirements address items specific to the ongoing maintenance and support of your product after delivery. Think of these requirements as if you were the ones who would be responsible for caring for customers/end user after the product is delivered in its final form and in use "in the field". What would you require to do this job? Specify items such as: where, how and who must be able to maintain the product to correct errors, hardware failures, etc.; required support/troubleshooting manuals/guides; availability/documentation of source code; related technical documentation that must be available for maintainers; specific/unique tools required for maintenance; specific software/environment required for maintenance; etc.
+% Simple Diagnostics Tools (Yes)
+% Software Documentation (Yes)
+% Hardware Documentation (Yes)
+% Modular Components (Maybe later on???)
 
-\subsection{Requirement Name}
+% Include a header paragraph specific to your product here. Maintenance and support requirements address items specific to the ongoing maintenance and support of your product after delivery. Think of these requirements as if you were the ones who would be responsible for caring for customers/end user after the product is delivered in its final form and in use "in the field". What would you require to do this job? Specify items such as: where, how and who must be able to maintain the product to correct errors, hardware failures, etc.; required support/troubleshooting manuals/guides; availability/documentation of source code; related technical documentation that must be available for maintainers; specific/unique tools required for maintenance; specific software/environment required for maintenance; etc.
+
+The Roam\_Bot will require clear maintenance and support guidelines to function effectively in educational environments. This includes offering software and hardware documentation to provide users with the ability to resolve issues. Furthermore, we will also provide debugging tools to enable quick and easy detection of the issues in the robot. By implementing these measures, we aim to enhance the robot's reliability and provide a rich learning experience for students.
+
+
+
+\subsection{Diagnostics Tools}
 \subsubsection{Description}
-Detailed requirement description...
+% Description of the Requirement
+These tools will provide an easy way to identify major problems in hardware or software that can prevent the robot from functioning safely.
+
 \subsubsection{Source}
-Source
+% The source of the requirement (e.g. customer, sponsor, specified team member (by name), federal regulation, local laws, CSE Senior Design project specifications, etc.)
+Team TLC
+
 \subsubsection{Constraints}
-Detailed description of applicable constraints...
+% A detailed description of realistic constraints relevant to this requirement. Economic, environmental, social, political, ethical, health \& safety, manufacturability, and sustainability should be discussed as appropriate.
+Environmental: The diagnostics are used to ensure the health of the robot, preventing unnecessary waste from the early replacement of components.\\
+Economic: The cost of diagnostics tools should remain within the robot budget.\\
+Sustainability: The diagnostics should minimize the need for replacements, allowing the robot to function for longer periods of time.
+
 \subsubsection{Standards}
-List of applicable standards
+% A detailed description of any specific standards that apply to this requirement (e.g. \textit{NSTM standard xx.xxx.x. color specifications \cite{Rubin2012}}. Standards exist for practically everything (ATC standard fuses, IEEE 802.15.4 embedded wireless, TLS 1.3 encryption, etc.), so be sure that you research and document which ones will be followed in meeting this requirement.
+- IEC 61010 (Safety Requirements for Electrical Measurement)\\
+- IEEE 802.3 (Wired Communication Protocols)\\
+- ISO 9001 (Reliable Quality Measurements)
+
 \subsubsection{Priority}
-Priority
+% Critical (1)
+% High (2)
+% Moderate (3)
+% Low (4)
+% Future (5)
+Priority Level: Future (5)
+
+
+
+\subsection{Software Documentation}
+\subsubsection{Description}
+The software documentation will provide detailed information about packages and frameworks used to control the robot system. This includes API use and troubleshooting guides. 
+
+\subsubsection{Source}
+Team TLC
+
+\subsubsection{Constraints}
+Usability: The documentation is written with clear, step by step instructions to ensure easy understanding and accessibility for any user.  It includes visual aids and structured content to help users navigate through information. \\
+Scalability: The guides can be updated, allowing the integration of new features and added frameworks.
+
+\subsubsection{Standards}
+- ISO/IEC 26514 (Best Practices for User Documentation)\\
+- IEEE 24765 (Systems and Software Engineering Vocabulary)
+
+\subsubsection{Priority}
+Priority Level: Low (4)
+
+
+
+\subsection{Hardware Documentation}
+\subsubsection{Description}
+The hardware documentation will provide detailed information about the components and controllers in the robot system. This includes specifications, configurations, and diagrams for sensors, motors, and microcontrollers.
+
+\subsubsection{Source}
+Team TLC
+
+\subsubsection{Constraints}
+Usability: The documentation is written with clear diagrams and instructions to ensure easy understanding and accessibility for any user.  It includes visual aids and structured content to help users navigate through information. \\
+Scalability: The guides can be updated, allowing the integration of new features and added frameworks.
+
+\subsubsection{Standards}
+- ISO/IEC 26514 (Best Practices for User Documentation)\\
+- IEEE 24765 (Systems and Software Engineering Vocabulary)
+
+\subsubsection{Priority}
+Priority Level: Low (4)

@@ -1,13 +1,48 @@
-Include a header paragraph specific to your product here. Performance requirements address items such as: how fast specific critical operations must complete; how long it takes to start/stop activities; how long the battery must last; maximum time it must take to set up; etc.
+% Speed
+% Navigation Accuracy
+% Obstacle Avoidance
+% Load Capacity
+% Terrain Adaptability
 
-\subsection{Requirement Name}
+The Roam\_Bot, is a rover that uses advanced pathfinding algorithms including Dijkstra's, Depth-First Search (DFS), Breadth-First Search, and A*. The purpose is to navigate environments autonomously. Designed for efficient navigation, the rover must meet specific operational metrics: completing path calculations within critical response times, achieving optimal setup and startup durations, maximizing battery life for extended deployment, and ensuring smooth and precise movement adjustments.
+
+\subsection{Pathfinding}
 \subsubsection{Description}
-Detailed requirement description...
+%The battery must be durable and able to survive extended periods of up to one hour without any further charging. It must also be able to withstand weathering conditions including erosion, damp environments, and temperature changes over times of inactivity.
+This section details the performance requirements for the pathfinding algorithms.
 \subsubsection{Source}
-Source
+Team TLC
 \subsubsection{Constraints}
-Detailed description of applicable constraints...
+The rover should follow these constraints:
+\begin{itemize}
+  \item The rover should be able to initialize calculating paths within 1000ms. 
+  \item The rover should be able to recalculate paths after reaching its LIDAR range within 500-1200-ms.
+  \item The rover should be limited to a max speed of 1 meter per second (m/s)
+  \item Total weight should not exceed what the motors can handle effectively.
+\end{itemize}
 \subsubsection{Standards}
-List of applicable standards
+The rover should ensure it complies with:
+\begin{itemize}
+  \item Robot Operating System (ROS) Communication Protocols \cite{ROSCOM}
+  \item Robot Operating System (ROS) Navigation Stack \cite{ROSCOM}
+\end{itemize}
 \subsubsection{Priority}
-Priority
+Priority Level: Critical (1)
+
+\subsection{Battery Life}
+\subsubsection{Description}
+The battery system of the autonomous rover must deliver reliable power to support uninterrupted operation across varied terrains and usage scenarios.
+\subsubsection{Source}
+Team TLC
+\subsubsection{Constraints}
+\begin{itemize}
+  \item Battery should last at least 4 hours of continuous operation.
+  \item Recharge time should be under 4 hours to enable quick redeployment.
+  \item The battery must perform reliably between -10°C and 50°C, with heat management solutions to prevent performance degradation in extreme conditions.
+\end{itemize}
+\subsubsection{Standards}
+\begin{itemize}
+    \item IEC 60086 \cite{IECBATT}
+\end{itemize}
+\subsubsection{Priority}
+Priority Level: Future (5)

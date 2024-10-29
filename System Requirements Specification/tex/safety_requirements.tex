@@ -1,37 +1,96 @@
-Include a header paragraph specific to your product here. Safety requirements might address items specific to your product such as: no exposure to toxic chemicals; lack of sharp edges that could harm a user; no breakable glass in the enclosure; no direct eye exposure to infrared/laser beams; packaging/grounding of electrical connections to avoid shock; etc.
+% Emergency Stop (Yes)
+% LiPo Battery Safety (Yes)
+% Overcurrent Protection (Maybe???)
+% Power Indicator (Maybe???)
+% Fall Protection (Maybe???)
+% IEC 60529 (Water and Particle Protection) (Maybe???)
 
-\subsection{Laboratory equipment lockout/tagout (LOTO) procedures}
+% Include a header paragraph specific to your product here. Safety requirements might address items specific to your product such as: no exposure to toxic chemicals; lack of sharp edges that could harm a user; no breakable glass in the enclosure; no direct eye exposure to infrared/laser beams; packaging/grounding of electrical connections to avoid shock; etc.
+
+The Roam\_Bot is designed to avoid any hazardous materials and breakable components including glass. All electrical components will be properly protected and grounded to prevent any unwanted current discharge. If the robot's action becomes undesirable, safety protocols are implemented for an emergency stop to prevent further robot or human injury.
+
+
+
+\subsection{Laboratory Equipment Lockout/Tagout (LOTO) Procedures}
 \subsubsection{Description}
+% Description of the Requirement
 Any fabrication equipment provided used in the development of the project shall be used in accordance with OSHA standard LOTO procedures. Locks and tags are installed on all equipment items that present use hazards, and ONLY the course instructor or designated teaching assistants may remove a lock. All locks will be immediately replaced once the equipment is no longer in use.
-\subsubsection{Source}
-CSE Senior Design laboratory policy
-\subsubsection{Constraints}
-Equipment usage, due to lock removal policies, will be limited to availability of the course instructor and designed teaching assistants.
-\subsubsection{Standards}
-Occupational Safety and Health Standards 1910.147 - The control of hazardous energy (lockout/tagout).
-\subsubsection{Priority}
-Critical
 
-\subsection{National Electric Code (NEC) wiring compliance}
+\subsubsection{Source}
+% The source of the requirement (e.g. customer, sponsor, specified team member (by name), federal regulation, local laws, CSE Senior Design project specifications, etc.)
+CSE Senior Design Laboratory Policy
+
+\subsubsection{Constraints}
+% A detailed description of realistic constraints relevant to this requirement. Economic, environmental, social, political, ethical, health \& safety, manufacturability, and sustainability should be discussed as appropriate.
+Equipment usage, due to lock removal policies, will be limited to the availability of the course instructor and designed teaching assistants.
+
+\subsubsection{Standards}
+% A detailed description of any specific standards that apply to this requirement (e.g. \textit{NSTM standard xx.xxx.x. color specifications \cite{Rubin2012}}. Standards exist for practically everything (ATC standard fuses, IEEE 802.15.4 embedded wireless, TLS 1.3 encryption, etc.), so be sure that you research and document which ones will be followed in meeting this requirement.
+Occupational Safety and Health Standards 1910.147 - Control of Hazardous Energy (Lockout/Tagout).
+
+\subsubsection{Priority}
+% Critical (1)
+% High (2)
+% Moderate (3)
+% Low (4)
+% Future (5)
+Priority Level: Critical (1)
+
+
+
+\subsection{National Electric Code (NEC) Wiring Compliance}
 \subsubsection{Description}
 Any electrical wiring must be completed in compliance with all requirements specified in the National Electric Code. This includes wire runs, insulation, grounding, enclosures, over-current protection, and all other specifications.
+
 \subsubsection{Source}
-CSE Senior Design laboratory policy
+CSE Senior Design Laboratory Policy
+
 \subsubsection{Constraints}
 High voltage power sources, as defined in NFPA 70, will be avoided as much as possible in order to minimize potential hazards.
+
 \subsubsection{Standards}
 NFPA 70
-\subsubsection{Priority}
-Critical
 
-\subsection{RIA robotic manipulator safety standards}
-\subsubsection{Description}
-Robotic manipulators, if used, will either housed in a compliant lockout cell with all required safety interlocks, or certified as a "collaborative" unit from the manufacturer.
-\subsubsection{Source}
-CSE Senior Design laboratory policy
-\subsubsection{Constraints}
-Collaborative robotic manipulators will be preferred over non-collaborative units in order to minimize potential hazards. Sourcing and use of any required safety interlock mechanisms will be the responsibility of the engineering team.
-\subsubsection{Standards}
-ANSI/RIA R15.06-2012 American National Standard for Industrial Robots and Robot Systems, RIA TR15.606-2016 Collaborative Robots
 \subsubsection{Priority}
-Critical
+Priority Level: Critical (1)
+\newpage
+
+
+
+\subsection{Emergency Stop}
+\subsubsection{Description}
+This easily accessible switch is designed to stop all power, turning the robot off immediately. This feature will disconnect the battery despite the current state of the robot.
+
+\subsubsection{Source}
+Team TLC
+
+\subsubsection{Constraints}
+Accessibility: The button is made easily accessible to all users, ensuring quick activation in an emergency.\\
+Health and Safety: The stop is designed to protect all users by providing a nearly instant stop to all robot activity, reducing the risk of human injury.
+
+\subsubsection{Standards}
+- ISO 13850 (Safety of Machinery)\\
+- ANSI/RIA R15.06 (Safety of Robot Systems)
+
+\subsubsection{Priority}
+Priority Level: Critical (1)
+
+
+
+\subsection{LiPo Battery Safety}
+\subsubsection{Description}
+The battery is handled safely throughout its lifecycle, including its use, physical handling, and charging.
+
+\subsubsection{Source}
+Team TLC
+
+\subsubsection{Constraints}
+Environmental: LiPo batteries must be used and disposed of following industry standards to reduce their environmental impact and support the sustainability of recycling.\\
+Health and Safety: Safety measures are followed when charging and using the LiPo batteries to prevent the release of dangerous currents.
+
+\subsubsection{Standards}
+- IEC 62133 (Safety for Lithium Batteries)\\
+- UN 38.3 (Transport Safety for Lithium Batteries)
+
+\subsubsection{Priority}
+Priority Level: Critical (1)

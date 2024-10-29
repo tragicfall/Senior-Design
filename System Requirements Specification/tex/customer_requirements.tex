@@ -1,32 +1,56 @@
-Include a header paragraph specific to your product here. Customer requirements are those required features and functions specified for and by the intended audience for this product. This section establishes, clearly and concisely, the "look and feel" of the product, what each potential end-user should expect the product do and/or not do. Each requirement specified in this section is associated with a specific customer need that will be satisfied. In general Customer Requirements are the directly observable features and functions of the product that will be encountered by its users. Requirements specified in this section are created with, and must not be changed without, specific agreement of the intended customer/user/sponsor.
+% Size and Weight
+% Sustainable Battery Life
+% Easy of Use
+% Wireless Connectivity
+% Customization
 
-\subsection{Requirement Name}
-\subsubsection{Description}
-A detailed description of the feature/function that satisfies the requirement. For example: \textit{The GUI background will be slate blue. This specific color is required in order to ensure that the GUI matches other similar software products offered by the customer. Slate blue is specified as \#007FFF, using six-digit hexadecimal color specification.} It is acceptable and advisable to include drawings/graphics in the description if it aids understanding of the requirement.
-\subsubsection{Source}
-The source of the requirement (e.g. customer, sponsor, specified team member (by name), federal regulation, local laws, CSE Senior Design project specifications, etc.)
-\subsubsection{Constraints}
-A detailed description of realistic constraints relevant to this requirement. Economic, environmental, social, political, ethical, health \& safety, manufacturability, and sustainability should be discussed as appropriate.
-\subsubsection{Standards}
-A detailed description of any specific standards that apply to this requirement (e.g. \textit{NSTM standard xx.xxx.x. color specifications \cite{Rubin2012}}. Standards exist for practically everything (ATC standard fuses, IEEE 802.15.4 embedded wireless, TLS 1.3 encryption, etc.), so be sure that you research and document which ones will be followed in meeting this requirement.
-\subsubsection{Priority}
-The priority of this requirement relative to other specified requirements. Use the following priorities:
-\begin{itemize}
- \item Critical (must have or product is a failure)
- \item High (very important to customer acceptance, desirability)
- \item Moderate (should have for proper product functionality);
- \item Low (nice to have, will include if time/resource permits)
- \item Future (not feasible in this version of the product, but should be considered for a future release).
-\end{itemize}
+The Roam\_Bot will be fully utilized by customers who have their own path finding system or some understanding of the movement of the rover. The rover will be able to navigate through set paths as well as the option to manually control where the rover will go.
+%Include a header paragraph specific to your product here. Customer requirements are those required features and functions specified for and by the intended audience for this product. This section establishes, clearly and concisely, the "look and feel" of the product, what each potential end-user should expect the product do and/or not do. Each requirement specified in this section is associated with a specific customer need that will be satisfied. In general Customer Requirements are the directly observable features and functions of the product that will be encountered by its users. Requirements specified in this section are created with, and must not be changed without, specific agreement of the intended customer/user/sponsor.
 
-\subsection{Requirement Name}
+\subsection{Reliable Movement}
 \subsubsection{Description}
-Detailed requirement description...
+The Roam\_Bot will have motors controlling the 4 wheels of the rover. The motors are powered by a LiPo (Lithium Polymer 22.2V) battery. The power of the motors are controlled by a raspberry pi which takes in user input from our UI. 
+% A detailed description of the feature/function that satisfies the requirement. For example: \textit{The GUI background will be slate blue. This specific color is required in order to ensure that the GUI matches other similar software products offered by the customer. Slate blue is specified as \#007FFF, using six-digit hexadecimal color specification.} It is acceptable and advisable to include drawings/graphics in the description if it aids understanding of the requirement.
 \subsubsection{Source}
-Source
+ CSE Senior Design project specifications
 \subsubsection{Constraints}
-Detailed description of applicable constraints...
+The rover is limited by it's size and the overall cost of making a similar product. The wheels of the rover does not have a function to go up or down stairs easily.
+%A detailed description of realistic constraints relevant to this requirement. Economic, environmental, social, political, ethical, health \& safety, manufacturability, and sustainability should be discussed as appropriate.
 \subsubsection{Standards}
-List of applicable standards
+The speed of the motors will be limited so that it won't be a hazard when used incautiously. There will be a kill switch to turn off the rover in any situation and its function must not depend on any power source or wiring connection. The rover will meet strict cleanliness requirements to avoid contaminating samples with materials from Earth. The rover will not include any flammable, environmentally damaging, or otherwise hazardous liquids or gases.
+%A detailed description of any specific standards that apply to this requirement (e.g. \textit{NSTM standard xx.xxx.x. color specifications \cite{Rubin2012}}. Standards exist for practically everything (ATC standard fuses, IEEE 802.15.4 embedded wireless, TLS 1.3 encryption, etc.), so be sure that you research and document which ones will be followed in meeting this requirement.
 \subsubsection{Priority}
-Priority
+Priority Level: Critical (1)
+%Use the following priorities:
+%\begin{itemize}
+ %\item Critical (must have or product is a failure)
+ %\item High (very important to customer acceptance, desirability)
+ %\item Moderate (should have for proper product functionality);
+ %\item Low (nice to have, will include if time/resource permits)
+ %\item Future (not feasible in this version of the product, but should be considered for a future release).
+%\end{itemize}
+
+\subsection{Path finding system}
+\subsubsection{Description}
+The path finding algorithm finds the shortest distance to the target spot while also noting the terrain around it to avoid while moving. The path finding algorithm will take in input from LIDAR and close range sensors. With the information, it will control the wheels to go in that direction.
+\subsubsection{Source}
+ CSE Senior Design project specifications
+\subsubsection{Constraints}
+Having the rover to constantly detect the path will slow processing power.
+\subsubsection{Standards}
+The factors that affect performance of the path finding system include the problem size, path length, number of obstacles, data structures, and heuristics.
+\subsubsection{Priority}
+Priority Level: High (2) (very important to customer acceptance, desirability)
+
+
+\subsection{Attachments}
+\subsubsection{Description}
+The rover will have attachable components to help it navigate and perform different task. These attachments ranges from a water pump, a push arm, and any future attachments.
+\subsubsection{Source}
+ CSE Senior Design project specifications
+\subsubsection{Constraints}
+The amount of space the rover has and the carry weight of the rover limits what can be put on the rover.
+\subsubsection{Standards}
+The rover will not include any flammable, environmentally damaging, or otherwise hazardous liquids or gases.
+\subsubsection{Priority}
+Priority Level: Moderate (3) (should have for proper product functionality);
