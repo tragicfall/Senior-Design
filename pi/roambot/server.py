@@ -3,26 +3,31 @@ import asyncio
 import websockets
 
 # Define the handler function for incoming WebSocket connections
-async def handler(websocket, path):
-    print(f"Client connected from {path}")
+async def handler(websocket):
+    print("Client connected...")
     try:
-        async for message in websocket:
+        while True:
+            message = await websocket.recv()
             print(f"Received: {message}")
-            response = f"Echo: {message}"
-            await websocket.send(response)
-            print(f"Sent: {response}")
     except websockets.ConnectionClosed:
-        print("Client disconnected")
+        print("Client disconnected...")
+
+async def poll():
+    while True:
+        await asyncio.sleep(1)
+        print("Polling...")
+
 
 # Main function to start the server
 async def main():
     server = await websockets.serve(handler, "0.0.0.0", 64912)
     print("WebSocket server is running on ws://0.0.0.0:64912")
+    await poll()
     await asyncio.Future()  # Keeps the server running indefinitely
 
 # Run the server
-if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("\nServer stopped.")
+try:
+    asyncio.run(main())
+except KeyboardInterrupt:
+    print("\nServer has been stopped...")
+
