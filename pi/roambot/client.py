@@ -53,28 +53,28 @@ async def poll_keys():
         # Print out the pressed keys
         if count == 1:
             if keys[ord('w')]:
-                message = "Up"
+                message = "US"
             elif keys[ord('a')]:
-                message = "Left"
+                message = "LS"
             elif keys[ord('s')]:
-                message = "Down"
+                message = "DS"
             elif keys[ord('d')]:
-                message = "Right"
+                message = "RS"
             else:
-                message = "Stop"
+                message = "SS"
         elif count == 2:
             if keys[ord('w')] and keys[ord('a')]:
-                message = "Up-Left"
+                message = "UL"
             elif keys[ord('w')] and keys[ord('d')]:
-                message = "Up-Right"
+                message = "UR"
             elif keys[ord('s')] and keys[ord('a')]:
-                message = "Down-Left"
+                message = "DL"
             elif keys[ord('s')] and keys[ord('d')]:
-                message = "Down-Right"
+                message = "DR"
             else:
-                message = "Stop"
+                message = "SS"
         else:
-            message = "Stop"
+            message = "SS"
 
         # Delay to limit CPU usage
         await asyncio.sleep(0.1)
