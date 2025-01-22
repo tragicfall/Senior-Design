@@ -12,17 +12,10 @@ async def handler(websocket):
     except websockets.ConnectionClosed:
         print("Client disconnected...")
 
-async def poll():
-    while True:
-        await asyncio.sleep(1)
-        print("Polling...")
-
-
 # Main function to start the server
 async def main():
     server = await websockets.serve(handler, "0.0.0.0", 64912)
     print("WebSocket server is running on ws://0.0.0.0:64912")
-    await poll()
     await asyncio.Future()  # Keeps the server running indefinitely
 
 # Run the server
