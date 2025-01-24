@@ -21,3 +21,4 @@ nano /etc/wpa_supplicant/wpa_supplicant.conf
 //////////////////////////////////////////
 ssid = "skynet"
 pswd = "t3rm1n4t0r"
+ip   =  192.168.1.19
