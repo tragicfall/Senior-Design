@@ -1,3 +1,10 @@
+# SaberTooth Controller 2x25 v2.0 (Mode: 011101) [0 is up, 1 is down]
+# Switches [1:2] = Mode (01: Simple Serial)
+# Switches [3] = Lithium Cutoff (1: Enabled)
+# Switches [4:5] = Baudrate (10: 9600)
+# Switches [6] = Slave Mode (1: Enabled)
+# 5V TTL Logic
+
 import asyncio
 import websockets
 import serial
