@@ -1,5 +1,11 @@
-// GPIO Library
-// Andrew Howard
+// GPIO Library (Header)
+// File: gpio.h
+// Group Members:
+// - Christopher David
+// - Madison Gage
+// - Andrew Howard
+// - Abubakar Kassim
+// - Raya Sultan
 
 //-----------------------------------------------------------------------------
 // Hardware Target
@@ -9,12 +15,22 @@
 // Target uC:       TM4C123GH6PM
 // System Clock:    40 MHz
 
+// Hardware configuration
+// GPIO PIN PD0 - Input to go Right
+// GPIO PIN PD1 - Input to go Down
+// GPIO PIN PD2 - Input to go Left
+// GPIO PIN PD3 - Input to go Up
+
 //-----------------------------------------------------------------------------
-// Device includes, defines, and assembler directives
+// Preprocessor Directive
 //-----------------------------------------------------------------------------
 
 #ifndef GPIO_H_
 #define GPIO_H_
+
+//-----------------------------------------------------------------------------
+// Device Includes
+//-----------------------------------------------------------------------------
 
 #include <stdint.h>
 

@@ -1,9 +1,11 @@
 // Wait Library (Header)
 // File: wait.h
 // Group Members:
-// - Andrew Howard
-// - James Revette
+// - Christopher David
 // - Madison Gage
+// - Andrew Howard
+// - Abubakar Kassim
+// - Raya Sultan
 
 //-----------------------------------------------------------------------------
 // Hardware Target
@@ -21,9 +23,15 @@
 #define WAIT_H_
 
 //-----------------------------------------------------------------------------
+// Device Includes
+//-----------------------------------------------------------------------------
+
+#include <stdint.h>
+
+//-----------------------------------------------------------------------------
 // Subroutines
 //-----------------------------------------------------------------------------
 
-extern void waitMicrosecond(unsigned int us);
+extern void waitMicrosecond(uint32_t us);
 
 #endif

@@ -1,5 +1,11 @@
-// UART Library
-// Andrew Howard
+// UART Library (Definition)
+// File: uart.c
+// Group Members:
+// - Christopher David
+// - Madison Gage
+// - Andrew Howard
+// - Abubakar Kassim
+// - Raya Sultan
 
 //-----------------------------------------------------------------------------
 // Hardware Target
@@ -7,7 +13,7 @@
 
 // Target Platform: EK-TM4C123GXL
 // Target uC:       TM4C123GH6PM
-// System Clock:    -
+// System Clock:    40 MHz
 
 // Hardware configuration:
 // UART Interface:
@@ -15,13 +21,17 @@
 //   U2TX (PD7) and U2RX (PD6) are connected to the 2nd controller
 
 //-----------------------------------------------------------------------------
-// Device includes, defines, and assembler directives
+// Device Includes
 //-----------------------------------------------------------------------------
 
 #include <stdint.h>
-#include <stdbool.h>
 #include "tm4c123gh6pm.h"
 #include "uart.h"
+#include "wait.h"
+
+//-----------------------------------------------------------------------------
+// Defines
+//-----------------------------------------------------------------------------
 
 // PortB masks
 #define UART1_TX_MASK 2
@@ -31,9 +41,32 @@
 #define UART2_RX_MASK 64
 #define UART2_TX_MASK 128
 
-//-----------------------------------------------------------------------------
-// Global variables
-//-----------------------------------------------------------------------------
+// Wheel Power Levels (Front Left, Front Right, Back Left, Back Right)
+#define AL_STOP          0
+
+#define FL_REVERSE_FAST  44
+#define FL_REVERSE_SLOW  54
+#define FL_FULL_STOP     64
+#define FL_FORWARD_SLOW  74
+#define FL_FORWARD_FAST  84
+
+#define FR_REVERSE_FAST  212
+#define FR_REVERSE_SLOW  202
+#define FR_FULL_STOP     192
+#define FR_FORWARD_SLOW  182
+#define FR_FORWARD_FAST  172
+
+#define BL_REVERSE_FAST  44
+#define BL_REVERSE_SLOW  54
+#define BL_FULL_STOP     64
+#define BL_FORWARD_SLOW  74
+#define BL_FORWARD_FAST  84
+
+#define BR_REVERSE_FAST  212
+#define BR_REVERSE_SLOW  202
+#define BR_FULL_STOP     192
+#define BR_FORWARD_SLOW  182
+#define BR_FORWARD_FAST  172
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -69,6 +102,7 @@ void setUart1BaudRate(uint32_t baudRate, uint32_t fcyc)
     UART1_CTL_R = UART_CTL_TXE | UART_CTL_RXE | UART_CTL_UARTEN;    // turn-on UART0
 }
 
+// Write value to UART1
 void putiUart1(uint32_t i)
 {
     while (UART1_FR_R & UART_FR_TXFF);               // wait if uart0 tx fifo full
@@ -83,7 +117,7 @@ void initUart2()
     SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R3;
     _delay_cycles(3);
 
-    // **Unlock PD7 (if needed)**
+    // Unlock PD7
     GPIO_PORTD_LOCK_R = 0x4C4F434B;  // Unlock Port D
     GPIO_PORTD_CR_R |= UART2_TX_MASK | UART2_RX_MASK; // Allow changes to PD7
 
@@ -108,8 +142,74 @@ void setUart2BaudRate(uint32_t baudRate, uint32_t fcyc)
     UART2_CTL_R = UART_CTL_TXE | UART_CTL_RXE | UART_CTL_UARTEN;    // turn-on UART0
 }
 
+// Write value to UART2
 void putiUart2(uint32_t i)
 {
     while (UART2_FR_R & UART_FR_TXFF);               // wait if uart0 tx fifo full
     UART2_DR_R = i;                                  // write character to fifo
+}
+
+// Move the robot in a specified direction
+void move(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t backRight)
+{
+    putiUart1(frontLeft);
+    putiUart2(backLeft);
+    waitMicrosecond(100);
+    putiUart1(frontRight);
+    putiUart2(backRight);
+    waitMicrosecond(100);
+}
+
+// Move the robot up
+void moveUp()
+{
+    move(FL_FORWARD_FAST, FR_FORWARD_FAST, BL_FORWARD_FAST, BR_FORWARD_FAST);
+}
+
+// Move the robot sharp left
+void moveLeft()
+{
+    move(FL_REVERSE_FAST, FR_FORWARD_FAST, BL_REVERSE_FAST, BR_FORWARD_FAST);
+}
+
+// Move the robot down
+void moveDown()
+{
+    move(FL_REVERSE_FAST, FR_REVERSE_FAST, BL_REVERSE_FAST, BR_REVERSE_FAST);
+}
+
+// Move the robot sharp right
+void moveRight()
+{
+    move(FL_FORWARD_FAST, FR_REVERSE_FAST, BL_FORWARD_FAST, BR_REVERSE_FAST);
+}
+
+// Move the robot up and left
+void moveUpLeft()
+{
+    move(FL_FORWARD_SLOW, FR_FORWARD_FAST, BL_FORWARD_SLOW, BR_FORWARD_FAST);
+}
+
+// Move the robot up and right
+void moveUpRight()
+{
+    move(FL_FORWARD_FAST, FR_FORWARD_SLOW, BL_FORWARD_FAST, BR_FORWARD_SLOW);
+}
+
+// Move the robot down and left
+void moveDownLeft()
+{
+    move(FL_REVERSE_SLOW, FR_REVERSE_FAST, BL_REVERSE_SLOW, BR_REVERSE_FAST);
+}
+
+// Move the robot down and right
+void moveDownRight()
+{
+    move(FL_REVERSE_FAST, FR_REVERSE_SLOW, BL_REVERSE_FAST, BR_REVERSE_SLOW);
+}
+
+// Stop the robot
+void moveStop()
+{
+    move(AL_STOP, AL_STOP, AL_STOP, AL_STOP);
 }

@@ -1,5 +1,11 @@
-// GPIO Library
-// Andrew Howard
+// GPIO Library (Definition)
+// File: gpio.c
+// Group Members:
+// - Christopher David
+// - Madison Gage
+// - Andrew Howard
+// - Abubakar Kassim
+// - Raya Sultan
 
 //-----------------------------------------------------------------------------
 // Hardware Target
@@ -9,22 +15,35 @@
 // Target uC:       TM4C123GH6PM
 // System Clock:    40 MHz
 
+// Hardware configuration
+// GPIO PIN PD0 - Input to go Right
+// GPIO PIN PD1 - Input to go Down
+// GPIO PIN PD2 - Input to go Left
+// GPIO PIN PD3 - Input to go Up
+
 //-----------------------------------------------------------------------------
-// Device includes, defines, and assembler directives
+// Device Includes
 //-----------------------------------------------------------------------------
 
 #include <stdint.h>
-#include <stdbool.h>
 #include "tm4c123gh6pm.h"
 #include "gpio.h"
 
-// PortD masks
+//-----------------------------------------------------------------------------
+// Defines
+//-----------------------------------------------------------------------------
+
 #define PD0_RIGHT (0b0001)
 #define PD1_DOWN  (0b0010)
 #define PD2_LEFT  (0b0100)
 #define PD3_UP    (0b1000)
 #define PD_ALL    (0b1111)
 
+//-----------------------------------------------------------------------------
+// Subroutines
+//-----------------------------------------------------------------------------
+
+// Initialize GPIO Port D for detecting controls
 void initGPIO()
 {
     // Enable clocks
@@ -39,7 +58,7 @@ void initGPIO()
     GPIO_PORTD_PDR_R |= PD_ALL;
 }
 
-// return the appropriate control value by polling the GPIO port 9 times
+// Read the controls from the GPIO Port D (9 samples)
 uint8_t getControls()
 {
     uint8_t up_count = 0;

@@ -1,11 +1,17 @@
-// Clock Library
-// Andrew Howard
+// Clock Library (Definition)
+// File: clock.c
+// Group Members:
+// - Christopher David
+// - Madison Gage
+// - Andrew Howard
+// - Abubakar Kassim
+// - Raya Sultan
 
 //-----------------------------------------------------------------------------
 // Hardware Target
 //-----------------------------------------------------------------------------
 
-// Target Platform: EK-TM4C123GXL
+// Target Platform: EK-TM4C123GXL Evaluation Board
 // Target uC:       TM4C123GH6PM
 // System Clock:    -
 
@@ -13,16 +19,12 @@
 // 16 MHz external crystal oscillator
 
 //-----------------------------------------------------------------------------
-// Device includes, defines, and assembler directives
+// Device Includes
 //-----------------------------------------------------------------------------
 
 #include <stdint.h>
 #include "tm4c123gh6pm.h"
 #include "clock.h"
-
-//-----------------------------------------------------------------------------
-// Global variables
-//-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
 // Subroutines

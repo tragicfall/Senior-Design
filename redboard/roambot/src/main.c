@@ -1,13 +1,32 @@
+// Main Code
+// File: main.c
+// Group Members:
+// - Christopher David
+// - Madison Gage
+// - Andrew Howard
+// - Abubakar Kassim
+// - Raya Sultan
+
 //-----------------------------------------------------------------------------
 // Hardware Target
 //-----------------------------------------------------------------------------
 
-// Target Platform: EK-TM4C123GXL Evaluation Board
+// Target Platform: EK-TM4C123GXL
 // Target uC:       TM4C123GH6PM
 // System Clock:    40 MHz
 
+// Hardware configuration
+// GPIO Input Interface:
+//     GPIO PIN PD0 - Input to go Right
+//     GPIO PIN PD1 - Input to go Down
+//     GPIO PIN PD2 - Input to go Left
+//     GPIO PIN PD3 - Input to go Up
+// UART Outut Interface:
+//     U1TX (PB1) and U1RX (PB0) are connected to the 1st controller
+//     U2TX (PD7) and U2RX (PD6) are connected to the 2nd controller
+
 //-----------------------------------------------------------------------------
-// Device Includes and Defines
+// Device Includes
 //-----------------------------------------------------------------------------
 
 #include <stdint.h>
@@ -18,32 +37,9 @@
 #include "wait.h"
 #include "gpio.h"
 
-// Wheel power levels for each direction (Front Left, Front Right, Back Left, Back Right)
-#define AL_STOP          0
-
-#define FL_REVERSE_FAST  44
-#define FL_REVERSE_SLOW  54
-#define FL_FULL_STOP     64
-#define FL_FORWARD_SLOW  74
-#define FL_FORWARD_FAST  84
-
-#define FR_REVERSE_FAST  212
-#define FR_REVERSE_SLOW  202
-#define FR_FULL_STOP     192
-#define FR_FORWARD_SLOW  182
-#define FR_FORWARD_FAST  172
-
-#define BL_REVERSE_FAST  44
-#define BL_REVERSE_SLOW  54
-#define BL_FULL_STOP     64
-#define BL_FORWARD_SLOW  74
-#define BL_FORWARD_FAST  84
-
-#define BR_REVERSE_FAST  212
-#define BR_REVERSE_SLOW  202
-#define BR_FULL_STOP     192
-#define BR_FORWARD_SLOW  182
-#define BR_FORWARD_FAST  172
+//-----------------------------------------------------------------------------
+// Defines
+//-----------------------------------------------------------------------------
 
 // Controls {Up, Left, Down, Right}
 #define UP         0b1000
@@ -76,98 +72,9 @@ void initHw(void)
     setUart2BaudRate(9600, 40000000);
 }
 
-void moveUp()
-{
-    putiUart1(FL_FORWARD_FAST);
-    putiUart2(BL_FORWARD_FAST);
-    waitMicrosecond(100);
-    putiUart1(FR_FORWARD_FAST);
-    putiUart2(BR_FORWARD_FAST);
-    waitMicrosecond(100);
-}
-
-void moveLeft()
-{
-    putiUart1(FL_REVERSE_FAST);
-    putiUart2(BL_REVERSE_FAST);
-    waitMicrosecond(100);
-    putiUart1(FR_FORWARD_FAST);
-    putiUart2(BR_FORWARD_FAST);
-    waitMicrosecond(100);
-}
-
-void moveDown()
-{
-    putiUart1(FL_REVERSE_FAST);
-    putiUart2(BL_REVERSE_FAST);
-    waitMicrosecond(100);
-    putiUart1(FR_REVERSE_FAST);
-    putiUart2(BR_REVERSE_FAST);
-    waitMicrosecond(100);
-}
-
-void moveRight()
-{
-    putiUart1(FL_FORWARD_FAST);
-    putiUart2(BL_FORWARD_FAST);
-    waitMicrosecond(100);
-    putiUart1(FR_REVERSE_FAST);
-    putiUart2(BR_REVERSE_FAST);
-    waitMicrosecond(100);
-}
-
-void moveUpLeft()
-{
-    putiUart1(FL_FORWARD_SLOW);
-    putiUart2(BL_FORWARD_SLOW);
-    waitMicrosecond(100);
-    putiUart1(FR_FORWARD_FAST);
-    putiUart2(BR_FORWARD_FAST);
-    waitMicrosecond(100);
-}
-
-void moveUpRight()
-{
-    putiUart1(FL_FORWARD_FAST);
-    putiUart2(BL_FORWARD_FAST);
-    waitMicrosecond(100);
-    putiUart1(FR_FORWARD_SLOW);
-    putiUart2(BR_FORWARD_SLOW);
-    waitMicrosecond(100);
-}
-
-void moveDownLeft()
-{
-    putiUart1(FL_REVERSE_SLOW);
-    putiUart2(BL_REVERSE_SLOW);
-    waitMicrosecond(100);
-    putiUart1(FR_REVERSE_FAST);
-    putiUart2(BR_REVERSE_FAST);
-    waitMicrosecond(100);
-}
-
-void moveDownRight()
-{
-    putiUart1(FL_REVERSE_FAST);
-    putiUart2(BL_REVERSE_FAST);
-    waitMicrosecond(100);
-    putiUart1(FR_REVERSE_SLOW);
-    putiUart2(BR_REVERSE_SLOW);
-    waitMicrosecond(100);
-}
-
-void moveStop()
-{
-    putiUart1(AL_STOP);
-    putiUart2(AL_STOP);
-    waitMicrosecond(100);
-}
-
 //-----------------------------------------------------------------------------
 // Main
 //-----------------------------------------------------------------------------
-
-
 
 int main(void)
 {

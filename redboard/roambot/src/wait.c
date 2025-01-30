@@ -1,9 +1,11 @@
 // Wait Library (Definition)
 // File: wait.c
 // Group Members:
-// - Andrew Howard
-// - James Revette
+// - Christopher David
 // - Madison Gage
+// - Andrew Howard
+// - Abubakar Kassim
+// - Raya Sultan
 
 //-----------------------------------------------------------------------------
 // Hardware Target
@@ -18,7 +20,6 @@
 //-----------------------------------------------------------------------------
 
 #include <stdint.h>
-#include "tm4c123gh6pm.h"
 #include "wait.h"
 
 //-----------------------------------------------------------------------------
