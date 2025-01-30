@@ -14,10 +14,8 @@
 #include <stdbool.h>
 #include "tm4c123gh6pm.h"
 #include "clock.h"
-#include "uart1.h"
+#include "uart.h"
 #include "wait.h"
-
-#define DEBUG 1
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -28,17 +26,30 @@ void initHw(void)
     // Initialize system clock to 40 MHz
     initSystemClockTo40Mhz();
 
-    // Initialize UART0
+    // Initialize Both UART
     initUart1();
+    initUart2();
 
-    // Set Baud Rate = 115200
+    // Set Baud Rate = 9600
     setUart1BaudRate(9600, 40000000);
+    setUart2BaudRate(9600, 40000000);
 }
 
-void move(uint32_t val)
+void moveForward()
 {
-    putiUart1(val);
-    waitMicrosecond(1000000);
+    putiUart1(84);
+    putiUart2(84);
+    waitMicrosecond(100);
+    putiUart1(172);
+    putiUart2(172);
+    waitMicrosecond(100);
+}
+
+void moveStop()
+{
+    putiUart1(0);
+    putiUart2(0);
+    waitMicrosecond(100);
 }
 
 //-----------------------------------------------------------------------------
@@ -49,22 +60,12 @@ int main(void)
 {
     // Initialize Hardware
     initHw();
-
+    
     while(true)
     {
-        move(0);
-        move(10);
-        move(20);
-        move(30);
-        move(40);
-        move(50);
-        move(64);
-        move(74);
-        move(84);
-        move(94);
-        move(104);
-        move(114);
-        move(124);
-        move(0);
+        moveForward();
+        waitMicrosecond(4000000);
+        moveStop();
+        waitMicrosecond(4000000);
     }
 }
