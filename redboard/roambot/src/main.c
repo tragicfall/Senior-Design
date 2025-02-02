@@ -116,5 +116,7 @@ int main(void)
                 break;
         }
         waitMicrosecond(4000000);
+        moveStop();
+        waitMicrosecond(1000000000);
     }
 }

@@ -53,9 +53,9 @@ void initGPIO()
     GPIO_PORTD_LOCK_R = 0x4C4F434B;  // Unlock Port D
     GPIO_PORTD_CR_R |= PD_ALL;       // Allow changes to PD0 and PD1
 
-    GPIO_PORTD_DIR_R |= PD_ALL;
-    GPIO_PORTD_DEN_R |= PD_ALL;
-    GPIO_PORTD_PDR_R |= PD_ALL;
+    GPIO_PORTD_DIR_R &= ~PD_ALL;
+    GPIO_PORTD_DEN_R |=  PD_ALL;
+    GPIO_PORTD_PDR_R |=  PD_ALL;
 }
 
 // Read the controls from the GPIO Port D (9 samples)
