@@ -1,5 +1,4 @@
 import pygame
-import time
 import asyncio
 import websockets
 
@@ -13,7 +12,7 @@ screen = pygame.display.set_mode((640, 480))
 message = "Stop"
 
 async def send_message():
-    uri = "ws://192.168.1.19:64912"  # Change 'localhost' to the server's IP if needed
+    uri = "ws://192.168.1.169:64912"  # Change 'localhost' to the server's IP if needed
     websocket = None
     try:
         websocket = await websockets.connect(uri)
@@ -60,17 +59,6 @@ async def poll_keys():
                 message = "DS"
             elif keys[ord('d')]:
                 message = "RS"
-            else:
-                message = "SS"
-        elif count == 2:
-            if keys[ord('w')] and keys[ord('a')]:
-                message = "UL"
-            elif keys[ord('w')] and keys[ord('d')]:
-                message = "UR"
-            elif keys[ord('s')] and keys[ord('a')]:
-                message = "DL"
-            elif keys[ord('s')] and keys[ord('d')]:
-                message = "DR"
             else:
                 message = "SS"
         else:

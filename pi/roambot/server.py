@@ -1,89 +1,51 @@
-# SaberTooth Controller 2x25 v2.0 (Mode: 011101) [0 is up, 1 is down]
+# SaberTooth Controller 2x25 v2.0 (Mode: 011100) [0 is up, 1 is down]
 # Switches [1:2] = Mode (01: Simple Serial)
 # Switches [3] = Lithium Cutoff (1: Enabled)
 # Switches [4:5] = Baudrate (10: 9600)
-# Switches [6] = Slave Mode (1: Enabled)
+# Switches [6] = Slave Mode (0: Disabled)
 # 5V TTL Logic
+
 
 import asyncio
 import websockets
-import serial
-import RPi.GPIO as GPIO
+import gpiod
 
-# Wheel power levels for each direction (Front Left, Front Right, Back Left, Back Right)
-FL_REVERSE_FAST = 44
-FL_REVERSE_SLOW = 54
-FL_FULL_STOP     = 64
-FL_FORWARD_SLOW  = 74
-FL_FORWARD_FAST  = 84
 
-FR_REVERSE_FAST = 172
-FR_REVERSE_SLOW = 182
-FR_FULL_STOP     = 192
-FR_FORWARD_SLOW  = 202
-FR_FORWARD_FAST  = 212
+chip = None
+GPIO_05_U = None
+GPIO_06_L = None
+GPIO_13_D = None
+GPIO_19_R = None
 
-BL_REVERSE_FAST = 44
-BL_REVERSE_SLOW = 54
-BL_FULL_STOP     = 64
-BL_FORWARD_SLOW  = 74
-BL_FORWARD_FAST  = 84
-
-BR_REVERSE_FAST = 172
-BR_REVERSE_SLOW = 182
-BR_FULL_STOP     = 192
-BR_FORWARD_SLOW  = 202
-BR_FORWARD_FAST  = 212
-
-# Direction mappings
-UP_STRAIGHT    = [FL_FORWARD_FAST, FR_FORWARD_FAST, BL_FORWARD_FAST, BR_FORWARD_FAST]
-LEFT_STRAIGHT  = [FL_REVERSE_FAST, FR_FORWARD_FAST, BL_REVERSE_FAST, BR_FORWARD_FAST]
-DOWN_STRAIGHT  = [FL_REVERSE_FAST, FR_REVERSE_FAST, BL_REVERSE_FAST, BR_REVERSE_FAST]
-RIGHT_STRAIGHT = [FL_FORWARD_FAST, FR_REVERSE_FAST, BL_FORWARD_FAST, BR_REVERSE_FAST]
-
-UP_LEFT        = [FL_FORWARD_SLOW, FR_FORWARD_FAST, BL_FORWARD_SLOW, BR_FORWARD_FAST]
-UP_RIGHT       = [FL_FORWARD_FAST, FR_FORWARD_SLOW, BL_FORWARD_FAST, BR_FORWARD_SLOW]
-DOWN_LEFT      = [FL_REVERSE_SLOW, FR_REVERSE_FAST, BL_REVERSE_SLOW, BR_REVERSE_FAST]
-DOWN_RIGHT     = [FL_REVERSE_FAST, FR_REVERSE_SLOW, BL_REVERSE_FAST, BR_REVERSE_SLOW]
-
-STOP_STOP      = [FL_FULL_STOP, FR_FULL_STOP, BL_FULL_STOP, BR_FULL_STOP]
 
 mapping = {
-    "US": UP_STRAIGHT,
-    "LS": LEFT_STRAIGHT,
-    "DS": DOWN_STRAIGHT,
-    "RS": RIGHT_STRAIGHT,
-    "UL": UP_LEFT,
-    "UR": UP_RIGHT,
-    "DL": DOWN_LEFT,
-    "DR": DOWN_RIGHT,
-    "SS": STOP_STOP,
+    "US": [1, 0, 0, 0],
+    "LS": [0, 1, 0, 0],
+    "DS": [0, 0, 1, 0],
+    "RS": [0, 0, 0, 1],
+    "SS": [0, 0, 0, 0]
 }
 
 
+# Function to setup gpio line
+def setup_gpio_line(line_num):
+    line = chip.get_line(line_num)
+    line.request(consumer="server.py", type=gpiod.LINE_REQ_DIR_OUT)
+    line.set_value(0)
+    return line
+
+
 # Function to send power levels to the serial port
-def send_to_serial(port, power_levels):
-    GPIO.output(3, GPIO.LOW)
-    GPIO.output(2, GPIO.HIGH)
-
-    port.write(bytes([power_levels[0]]))
-    port.flush()
-    port.write(bytes([power_levels[1]]))
-    port.flush()
-
-    GPIO.output(2, GPIO.LOW)
-    GPIO.output(3, GPIO.HIGH)
-
-    port.write(bytes([power_levels[2]]))
-    port.flush()
-    port.write(bytes([power_levels[3]]))
-    port.flush()
+def send_to_serial(power_levels):
+    GPIO_05_U.set_value(power_levels[0])
+    GPIO_06_L.set_value(power_levels[1])
+    GPIO_13_D.set_value(power_levels[2])
+    GPIO_19_R.set_value(power_levels[3])
 
 
 # WebSocket handler
 async def handler(websocket):
     print("Client connected...")
-    port = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=1)
     message_old = "SS"
     message_new = "SS"
     try:
@@ -93,7 +55,7 @@ async def handler(websocket):
             power_levels = mapping[message_new]
             print(f"Received: {message_new}")
             if message_new != message_old:
-                send_to_serial(port, power_levels)
+                send_to_serial(power_levels)
             
     except websockets.ConnectionClosed:
         print("Client disconnected...")
@@ -108,20 +70,37 @@ async def start():
 
 # Main function
 def main():
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(2, GPIO.OUT)  # GPIO pin 2 for the front motors
-    GPIO.setup(3, GPIO.OUT)  # GPIO pin 3 for the back motors
+    global chip
+    global GPIO_05_U
+    global GPIO_06_L
+    global GPIO_13_D
+    global GPIO_19_R
 
-    port = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=1)  # Initialize serial port
-    power_levels = STOP_STOP
+    # Initialize GPIO lines to the requested lines list
+    chip = gpiod.Chip('gpiochip0')
+    GPIO_05_U = setup_gpio_line(5)
+    GPIO_06_L = setup_gpio_line(6)
+    GPIO_13_D = setup_gpio_line(13)
+    GPIO_19_R = setup_gpio_line(19)
 
     try:
         asyncio.run(start())
+
     except KeyboardInterrupt:
         print("\nServer stopped by user...")
+
     finally:
-        port.close()
-        GPIO.cleanup()
+        # Cleanup the GPIO lines
+        GPIO_05_U.set_value(0)
+        GPIO_06_L.set_value(0)
+        GPIO_13_D.set_value(0)
+        GPIO_19_R.set_value(0)
+        GPIO_05_U.release()
+        GPIO_06_L.release()
+        GPIO_13_D.release()
+        GPIO_19_R.release()
+        chip.close()
+
 
 # run the main function
 main()
