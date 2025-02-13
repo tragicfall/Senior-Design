@@ -33,10 +33,10 @@
 // Defines
 //-----------------------------------------------------------------------------
 
-#define PD0_RIGHT (0b0001)
-#define PD1_DOWN  (0b0010)
-#define PD2_LEFT  (0b0100)
-#define PD3_UP    (0b1000)
+#define PD0_UP    (0b0001)
+#define PD1_LEFT  (0b0010)
+#define PD2_DOWN  (0b0100)
+#define PD3_RIGHT (0b1000)
 #define PD_ALL    (0b1111)
 
 //-----------------------------------------------------------------------------
@@ -70,16 +70,16 @@ uint8_t getControls()
 
     for (i=0; i<9; i++)
     {
-        up_count    += (GPIO_PORTD_DATA_R & PD3_UP) >> 3;
-        left_count  += (GPIO_PORTD_DATA_R & PD2_LEFT) >> 2;
-        down_count  += (GPIO_PORTD_DATA_R & PD1_DOWN) >> 1;
-        right_count += (GPIO_PORTD_DATA_R & PD0_RIGHT) >> 0;
+        up_count    += (GPIO_PORTD_DATA_R & PD0_UP) >> 0;
+        left_count  += (GPIO_PORTD_DATA_R & PD1_LEFT) >> 1;
+        down_count  += (GPIO_PORTD_DATA_R & PD2_DOWN) >> 2;
+        right_count += (GPIO_PORTD_DATA_R & PD3_RIGHT) >> 3;
     }
 
-    controls |= (up_count > 4) << 3;
-    controls |= (left_count > 4) << 2;
-    controls |= (down_count > 4) << 1;
-    controls |= (right_count > 4) << 0;
+    controls |= (up_count > 4) << 0;
+    controls |= (left_count > 4) << 1;
+    controls |= (down_count > 4) << 2;
+    controls |= (right_count > 4) << 3;
 
     return controls;
 }

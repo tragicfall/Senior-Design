@@ -17,13 +17,13 @@
 
 // Hardware configuration
 // GPIO Input Interface:
-//     GPIO PIN PD0 - Input to go Right
-//     GPIO PIN PD1 - Input to go Down
-//     GPIO PIN PD2 - Input to go Left
-//     GPIO PIN PD3 - Input to go Up
+//     GPIO PIN PD0 - Input to go Up
+//     GPIO PIN PD1 - Input to go Left
+//     GPIO PIN PD2 - Input to go Down
+//     GPIO PIN PD3 - Input to go Right
 // UART Outut Interface:
-//     U1TX (PB1) and U1RX (PB0) are connected to the 1st controller
-//     U2TX (PD7) and U2RX (PD6) are connected to the 2nd controller
+//     U1TX (PB1) is connected to the 1st (front) controller
+//     U2TX (PD7) is connected to the 2nd (back) controller
 
 //-----------------------------------------------------------------------------
 // Device Includes
@@ -42,14 +42,10 @@
 //-----------------------------------------------------------------------------
 
 // Controls {Up, Left, Down, Right}
-#define UP         0b1000
-#define LEFT       0b0100
-#define DOWN       0b0010
-#define RIGHT      0b0001
-#define UP_LEFT    0b1100
-#define UP_RIGHT   0b1001
-#define DOWN_LEFT  0b0110
-#define DOWN_RIGHT 0b0011
+#define UP         0b0001
+#define LEFT       0b0010
+#define DOWN       0b0100
+#define RIGHT      0b1000
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -99,24 +95,10 @@ int main(void)
             case RIGHT:
                 moveRight();
                 break;
-            case UP_LEFT:
-                moveUpLeft();
-                break;
-            case UP_RIGHT:
-                moveUpRight();
-                break;
-            case DOWN_LEFT:
-                moveDownLeft();
-                break;
-            case DOWN_RIGHT:
-                moveDownRight();
-                break;
             default:
                 moveStop();
                 break;
         }
-        waitMicrosecond(4000000);
-        moveStop();
-        waitMicrosecond(1000000000);
+        waitMicrosecond(100000);
     }
 }
