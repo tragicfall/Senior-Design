@@ -21,7 +21,7 @@ password: tlc
 // Operating System
 //////////////////////////////////////////
 
-- Ubuntu Desktop 24.04.2 LTS (64-BIT)
+- Ubuntu Desktop 24.04.2 LTS (64-BIT) [Noble Numbat - Debian]
 - Flashed onto 64GB MicroSD Card using Raspberry Pi Imager (Windows)
     - 1. Raspberry Pi Device: Raspberry Pi 5
     - 2. Operating System: Ubuntu Desktop 24.04.02 LTS (64-bit)
