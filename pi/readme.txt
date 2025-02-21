@@ -15,10 +15,22 @@ password: tlc
 // CPU Usage Information: top (press 1)
 // Network Details:       ifconfig
 // Network Information:   sudo nano /etc/netplan/...
+// Operating System Info: cat /etc/os-release
+
+//////////////////////////////////////////
+// Operating System
+//////////////////////////////////////////
+
+- Ubuntu Desktop 24.04.2 LTS (64-BIT)
+- Flashed onto 64GB MicroSD Card using Raspberry Pi Imager (Windows)
+    - 1. Raspberry Pi Device: Raspberry Pi 5
+    - 2. Operating System: Ubuntu Desktop 24.04.02 LTS (64-bit)
+    - 3. Storage: 64GB MicroSD Card
 
 //////////////////////////////////////////
 // ERB Lab 208 Wifi
 //////////////////////////////////////////
+
 ssid = "skynet"
 pswd = "t3rm1n4t0r"
-ip   =  192.168.1.33
+ip   =  192.168.1.??
