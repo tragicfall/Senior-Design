@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
   <diagram name="Page-1" id="trQdiBlen_foMQJMFfYV">
-    <mxGraphModel dx="574" dy="338" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="989" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="0nKidd32OIN0jVX-Ibuc-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="0nKidd32OIN0jVX-Ibuc-11" target="0nKidd32OIN0jVX-Ibuc-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0nKidd32OIN0jVX-Ibuc-11" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Motor_Control&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="0nKidd32OIN0jVX-Ibuc-11" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Motors&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="360" y="360" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0nKidd32OIN0jVX-Ibuc-12" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Speed&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -25,7 +25,7 @@
         <mxCell id="0nKidd32OIN0jVX-Ibuc-14" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Odometer&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="340" y="450" width="60" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="0nKidd32OIN0jVX-Ibuc-15" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Crash_Prevention&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="0nKidd32OIN0jVX-Ibuc-15" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Sonar_Sensors&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="410" y="450" width="90" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0nKidd32OIN0jVX-Ibuc-26" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.051;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.781;exitY=-0.016;exitDx=0;exitDy=0;exitPerimeter=0;targetPerimeterSpacing=-2;startArrow=none;startFill=0;endFill=1;" parent="1" edge="1">
@@ -52,13 +52,13 @@
         <mxCell id="0nKidd32OIN0jVX-Ibuc-48" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;6&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;spacing=-3;" parent="1" vertex="1">
           <mxGeometry x="360" y="400" width="20" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="NOaE37VPc0i63LTB-BPz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="NOaE37VPc0i63LTB-BPz-1" target="0nKidd32OIN0jVX-Ibuc-10">
+        <mxCell id="NOaE37VPc0i63LTB-BPz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="NOaE37VPc0i63LTB-BPz-1" target="0nKidd32OIN0jVX-Ibuc-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NOaE37VPc0i63LTB-BPz-1" value="Raspberry Pi" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="NOaE37VPc0i63LTB-BPz-1" value="&lt;b&gt;TM4C Redboard Microcontroller&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="320" y="240" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="NOaE37VPc0i63LTB-BPz-3" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;spacing=-3;" vertex="1" parent="1">
+        <mxCell id="NOaE37VPc0i63LTB-BPz-3" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;4&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;spacing=-3;" parent="1" vertex="1">
           <mxGeometry x="405" y="290" width="20" height="20" as="geometry" />
         </mxCell>
       </root>
