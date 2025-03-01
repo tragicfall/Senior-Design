@@ -23,18 +23,21 @@
 \usepackage[compact]{titlesec} 
 \usepackage[tablegrid]{vhistory}
 \usepackage{pbox}
+\usepackage{url}
 \allsectionsfont{\color{accentcolor}\scshape\selectfont}
 
 %%% Definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Change me to fit your team/semester information
 \definecolor{accentcolor}{rgb}{0.0,0.0,0.5} 
-\newcommand{\teamname}{Team Name}
-\newcommand{\productname}{Product Name}
+\newcommand{\teamname}{Team TLC}               %just to fill the line
+\newcommand{\productname}{Roam\_Bot}
 \newcommand{\coursename}{CSE 4317: Senior Design II}
-\newcommand{\semester}{Spring 2016}
+\newcommand{\semester}{Spring 2025}
 \newcommand{\docname}{Detailed Design Specification}
 \newcommand{\department}{Department of Computer Science \& Engineering}
 \newcommand{\university}{The University of Texas at Arlington}
-\newcommand{\authors}{Alan Turing \\ Grace Hopper \\ John Von Neumann \\ Ada Lovelace \\ Charles Babbage}
+\newcommand{\authors}{Abubakar Kassim \\ Andrew Howard \\ Christopher Davis \\ Madison Gage \\ Raya Sultan \\}
 
 %%% Headers and footers
 \usepackage{fancyhdr}
@@ -64,17 +67,20 @@
 \begin{document}
 
 %%% Cover sheet
-{\centering \huge \color{accentcolor} \sc \textbf{\department \\ \university} \par}
+{\centering \huge \color{accentcolor} \sc \textbf{\department \\ \university} \par} % department/university info
 \vspace{1 in}
-{\centering \huge \color{accentcolor} \sc \textbf{\docname \\ \coursename \\ \semester} \par}
-\vspace{0.5 in}
+{\centering \huge \color{accentcolor} \sc \textbf{\docname \\ \coursename \\ \semester} \par} % doc/semester info
+\vspace{0.1 in} % spacing before cover sheet image
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Change the graphic here. Put your image in the 'images' folder
+%   and update the name from 'images/test_image' to your image name
 \begin{figure}[h!]
 	\centering
-   	\includegraphics[width=0.60\textwidth]{images/test_image}
+   	\includegraphics[width=0.60\textwidth]{images/logo.png}
 \end{figure}
-\vspace{0.5 in}
+\vspace{0.1 in} % spacing after cover sheet image, before team/product info
 {\centering \huge \color{accentcolor} \sc \textbf{\teamname \\ \productname} \par}
-\vspace{0.5 in}
+\vspace{0.1 in} % spacing before team members
 {\centering \large \sc \textbf{\authors} \par}
 \newpage
 
@@ -85,11 +91,13 @@
 
 %%% Revision History
 \begin{versionhistory}
-  	\vhEntry{0.1}{1.01.2016}{GH}{document creation}
-  	\vhEntry{0.2}{1.05.2016}{AT|GH}{complete draft}
-  	\vhEntry{0.3}{1.12.2016}{AT|GH}{release candidate 1}
-  	\vhEntry{1.0}{1.20.2016}{AT|GH|CB}{official release}
-  	\vhEntry{1.1}{1.31.2016}{AL}{added design review requests}
+    \vhEntry{0.1}{2.4.2025}{CC}{Document Creation}
+    \vhEntry{0.2}{2.25.2025}{AH}{Added Introduction Information}
+    \vhEntry{0.3}{2.27.2025}{CD|RS|AK|AH}{Added Layer Information}
+    % \vhEntry{0.3}{1.12.2016}{AT|GH}{release candidate 1}
+    % \vhEntry{0.4}{1.20.2016}{AT|GH|CB}{official release}
+    % \vhEntry{0.5}{1.31.2016}{AL}{added design review requests}
+    \vhEntry{1.0}{2.28.2025}{CD|RS|MG|AK|AH}{Official Release}
 \end{versionhistory}
 \newpage
 
@@ -100,34 +108,35 @@
 
 %%% List of figures and tables (optional)
 \listoffigures
-\listoftables
 \newpage
 
 %%% Document sections
+
 \section{Introduction}
 \input{tex/introduction.tex}
+\newpage
+
 \section{System Overview}
 \input{tex/system_overview.tex}
 \newpage
 %\section{Subsystem Definitions \& Data Flow}
 %\input{tex/data_flow.tex}
 \newpage
-\section{X Layer Subsystems}
-\input{tex/x_layer_subsystems.tex}
+\section{Movement Layer Subsystems}
+\input{tex/1_movement_layer_subsystems.tex}
 \newpage
-\section{Y Layer Subsystems}
-\input{tex/y_layer_subsystems.tex}
+\section{Pathfinding Layer Subsystems}
+\input{tex/2_pathfinding_layer_subsystems.tex}
 \newpage
-\section{Z Layer Subsystems}
-\input{tex/z_layer_subsystems.tex}
-\newpage
-\section{Appendix A}
-\input{tex/appendix_a.tex}
-\newpage
+\section{Interface Layer Subsystems}
+\input{tex/3_interface_layer_subsystems.tex}
+\clearpage
+\section{Appendix}
+\input{tex/appendix.tex}
+\clearpage
 
 %%% References
-\bibliographystyle{plain}
-\bibliographystyle{reference/IEEEtran_custom}
+% \bibliographystyle{reference/IEEEtran_custom}
+\bibliographystyle{plainurl}
 \bibliography{reference/refs}{}
-
 \end{document}
