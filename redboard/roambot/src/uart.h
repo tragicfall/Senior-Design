@@ -45,15 +45,11 @@ void initUart2();
 void setUart2BaudRate(uint32_t baudRate, uint32_t fcyc);
 void putiUart2(uint32_t i);
 
-void move(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t backRight);
+void moveWheels(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t backRight);
 void moveUp();
 void moveLeft();
 void moveDown();
 void moveRight();
-void moveUpLeft();
-void moveUpRight();
-void moveDownLeft();
-void moveDownRight();
 void moveStop();
 
 #endif

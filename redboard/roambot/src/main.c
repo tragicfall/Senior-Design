@@ -69,6 +69,32 @@ void initHw(void)
 }
 
 //-----------------------------------------------------------------------------
+// Interface Functions
+//-----------------------------------------------------------------------------
+
+void move(uint8_t controls)
+{
+    switch (controls)
+    {
+        case UP:
+            moveUp();
+            break;
+        case LEFT:
+            moveLeft();
+            break;
+        case DOWN:
+            moveDown();
+            break;
+        case RIGHT:
+            moveRight();
+            break;
+        default:
+            moveStop();
+            break;
+    }
+}
+
+//-----------------------------------------------------------------------------
 // Main
 //-----------------------------------------------------------------------------
 
@@ -81,24 +107,7 @@ int main(void)
     while(true)
     {
         controls = getControls();
-        switch (controls)
-        {
-            case UP:
-                moveUp();
-                break;
-            case LEFT:
-                moveLeft();
-                break;
-            case DOWN:
-                moveDown();
-                break;
-            case RIGHT:
-                moveRight();
-                break;
-            default:
-                moveStop();
-                break;
-        }
+        move(controls);
         waitMicrosecond(100000);
     }
 }

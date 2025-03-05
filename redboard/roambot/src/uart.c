@@ -150,7 +150,7 @@ void putiUart2(uint32_t i)
 }
 
 // Move the robot in a specified direction
-void move(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t backRight)
+void moveWheels(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t backRight)
 {
     putiUart1(frontLeft);
     putiUart2(backLeft);
@@ -163,53 +163,29 @@ void move(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t backR
 // Move the robot up
 void moveUp()
 {
-    move(FL_FORWARD_FAST, FR_FORWARD_FAST, BL_FORWARD_FAST, BR_FORWARD_FAST);
+    moveWheels(FL_FORWARD_FAST, FR_FORWARD_FAST, BL_FORWARD_FAST, BR_FORWARD_FAST);
 }
 
 // Move the robot sharp left
 void moveLeft()
 {
-    move(FL_REVERSE_FAST, FR_FORWARD_FAST, BL_REVERSE_FAST, BR_FORWARD_FAST);
+    moveWheels(FL_REVERSE_FAST, FR_FORWARD_FAST, BL_REVERSE_FAST, BR_FORWARD_FAST);
 }
 
 // Move the robot down
 void moveDown()
 {
-    move(FL_REVERSE_FAST, FR_REVERSE_FAST, BL_REVERSE_FAST, BR_REVERSE_FAST);
+    moveWheels(FL_REVERSE_FAST, FR_REVERSE_FAST, BL_REVERSE_FAST, BR_REVERSE_FAST);
 }
 
 // Move the robot sharp right
 void moveRight()
 {
-    move(FL_FORWARD_FAST, FR_REVERSE_FAST, BL_FORWARD_FAST, BR_REVERSE_FAST);
-}
-
-// Move the robot up and left
-void moveUpLeft()
-{
-    move(FL_FORWARD_SLOW, FR_FORWARD_FAST, BL_FORWARD_SLOW, BR_FORWARD_FAST);
-}
-
-// Move the robot up and right
-void moveUpRight()
-{
-    move(FL_FORWARD_FAST, FR_FORWARD_SLOW, BL_FORWARD_FAST, BR_FORWARD_SLOW);
-}
-
-// Move the robot down and left
-void moveDownLeft()
-{
-    move(FL_REVERSE_SLOW, FR_REVERSE_FAST, BL_REVERSE_SLOW, BR_REVERSE_FAST);
-}
-
-// Move the robot down and right
-void moveDownRight()
-{
-    move(FL_REVERSE_FAST, FR_REVERSE_SLOW, BL_REVERSE_FAST, BR_REVERSE_SLOW);
+    moveWheels(FL_FORWARD_FAST, FR_REVERSE_FAST, BL_FORWARD_FAST, BR_REVERSE_FAST);
 }
 
 // Stop the robot
 void moveStop()
 {
-    move(AL_STOP, AL_STOP, AL_STOP, AL_STOP);
+    moveWheels(AL_STOP, AL_STOP, AL_STOP, AL_STOP);
 }
