@@ -46,6 +46,7 @@
 #define LEFT       0b0010
 #define DOWN       0b0100
 #define RIGHT      0b1000
+#define STOP       0b0000
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -105,8 +106,9 @@ int main(void)
     initHw();
     
     while(true)
-    {
-        controls = getControls();
+    {   
+        if (echoTime < 800) controls = STOP;            // if less < 3ft stop moving       
+        else                controls = getControls();
         move(controls);
         waitMicrosecond(100000);
     }
