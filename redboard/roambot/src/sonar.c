@@ -69,25 +69,25 @@ void initSonar(){
 }
 
 void time2_isr(){
-    if(step != 2){
+    if(step != 2){          // the distance is so far that the bounce back was lost so we reset
         echoTime = -1;
     }
 
-    Trig = 1;
+    Trig = 1;               // setting trig high 
     waitMicrosecond(10);
-    Trig = 0;
-    step = 0;
+    Trig = 0;               // setting trig low 
+    step = 0;               // counter for wide timer
     // Clear Timer Interrupt
     TIMER2_ICR_R |= TIMER_ICR_TATOCINT;
 }
 
 void echo_isr(){
-    if(step == 0){
+    if(step == 0){          // we reset the wide timer count
         // Set timer 0
         WTIMER5_TAV_R = 0;
-        step = 1;
+        step = 1;           // counter set to 1 indicating that the wide timer has been started
     } else {
-        echoTime = WTIMER5_TAV_R/(4*58);
+        echoTime = WTIMER5_TAV_R/(4*58);    // when we reenter the widetimer get the time
         step = 2;
     }
     // Clear interrupt flag
