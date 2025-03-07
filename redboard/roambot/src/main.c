@@ -24,6 +24,13 @@
 // UART Outut Interface:
 //     U1TX (PB1) is connected to the 1st (front) controller
 //     U2TX (PD7) is connected to the 2nd (back) controller
+// Ultrasonic (will add a second sonar)
+//     ECHO0 PIN PD6
+//     TRIG0 PIN PB3 
+
+#define ECHO_MASK    64   // PD6
+// PortB mask
+#define TRIG_MASK    8    // PB3
 
 //-----------------------------------------------------------------------------
 // Device Includes
