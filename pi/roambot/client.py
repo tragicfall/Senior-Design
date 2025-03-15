@@ -12,7 +12,7 @@ screen = pygame.display.set_mode((640, 480))
 message = "Stop"
 
 async def send_message():
-    uri = "ws://192.168.1.169:64912"  # Change 'localhost' to the server's IP if needed
+    uri = "ws://10.236.0.139:64912"  # Change 'localhost' to the server's IP if needed
     websocket = None
     try:
         websocket = await websockets.connect(uri)

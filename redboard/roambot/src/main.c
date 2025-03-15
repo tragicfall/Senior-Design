@@ -110,9 +110,10 @@ int main(void)
     
     while(true)
     {   
-        if (echoTime < 800) controls = STOP;            // if less < 3ft stop moving       
-        else                controls = getControls();
+        // if (echoTime < 800) controls = STOP;            // if less < 3ft stop moving       
+        // else
+        controls = getControls();
         move(controls);
-        waitMicrosecond(100000);
+        waitMicrosecond(2000000);
     }
 }
