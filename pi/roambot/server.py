@@ -77,7 +77,7 @@ def main():
     global GPIO_19_R
 
     # Initialize GPIO lines to the requested lines list
-    chip = gpiod.Chip('gpiochip0')
+    chip = gpiod.Chip('gpiochip4')
     GPIO_05_U = setup_gpio_line(5)
     GPIO_06_L = setup_gpio_line(6)
     GPIO_13_D = setup_gpio_line(13)
