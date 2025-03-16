@@ -114,6 +114,6 @@ int main(void)
         // else
         controls = getControls();
         move(controls);
-        waitMicrosecond(2000000);
+        waitMicrosecond(100000);
     }
 }

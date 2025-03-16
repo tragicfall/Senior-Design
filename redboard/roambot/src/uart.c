@@ -163,29 +163,29 @@ void moveWheels(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t
 // Move the robot up
 void moveUp()
 {
-    moveWheels(FL_FORWARD_FAST, FR_FORWARD_FAST, BL_FORWARD_FAST, BR_FORWARD_FAST);
+    moveWheels(73, 184, 73, 184); // front two are slow (rover is back heavy)
 }
 
 // Move the robot sharp left
 void moveLeft()
 {
-    moveWheels(FL_REVERSE_FAST, FR_FORWARD_FAST, BL_REVERSE_FAST, BR_FORWARD_FAST);
+    moveWheels(44, 172, 44, 168); // back right is slow
 }
 
 // Move the robot down
 void moveDown()
 {
-    moveWheels(FL_REVERSE_FAST, FR_REVERSE_FAST, BL_REVERSE_FAST, BR_REVERSE_FAST);
+    moveWheels(56, 200, 56, 200); // back two are fast (rover is back heavy)
 }
 
 // Move the robot sharp right
 void moveRight()
 {
-    moveWheels(FL_FORWARD_FAST, FR_REVERSE_FAST, BL_FORWARD_FAST, BR_REVERSE_FAST);
+    moveWheels(84, 212, 84, 212); // seems ok
 }
 
 // Stop the robot
 void moveStop()
 {
-    moveWheels(AL_STOP, AL_STOP, AL_STOP, AL_STOP);
+    moveWheels(0, 0, 0, 0);
 }
