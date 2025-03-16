@@ -42,31 +42,32 @@
 #define UART2_TX_MASK 128
 
 // Wheel Power Levels (Front Left, Front Right, Back Left, Back Right)
-#define AL_STOP          0
 
-#define FL_REVERSE_FAST  44
-#define FL_REVERSE_SLOW  54
-#define FL_FULL_STOP     64
-#define FL_FORWARD_SLOW  74
-#define FL_FORWARD_FAST  84
+// Move Up: front two wheels are slow (rover is back heavy)
+#define U_FL          9
+#define U_FR          9
+#define U_BL          8
+#define U_BR          8
 
-#define FR_REVERSE_FAST  212
-#define FR_REVERSE_SLOW  202
-#define FR_FULL_STOP     192
-#define FR_FORWARD_SLOW  182
-#define FR_FORWARD_FAST  172
+// Move Left: back right wheel is slow
+#define L_FL          20
+#define L_FR          20
+#define L_BL          20
+#define L_BR          24
 
-#define BL_REVERSE_FAST  44
-#define BL_REVERSE_SLOW  54
-#define BL_FULL_STOP     64
-#define BL_FORWARD_SLOW  74
-#define BL_FORWARD_FAST  84
+// Move Down: back two wheels are fast (rover is back heavy)
+#define D_FL          8
+#define D_FR          8
+#define D_BL          8
+#define D_BR          8
 
-#define BR_REVERSE_FAST  212
-#define BR_REVERSE_SLOW  202
-#define BR_FULL_STOP     192
-#define BR_FORWARD_SLOW  182
-#define BR_FORWARD_FAST  172
+// Move Right: power tuning seems ok
+#define R_FL          20
+#define R_FR          20
+#define R_BL          20
+#define R_BR          20
+
+#define STOP          0
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -163,29 +164,29 @@ void moveWheels(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t
 // Move the robot up
 void moveUp()
 {
-    moveWheels(73, 184, 73, 184); // front two are slow (rover is back heavy)
+    moveWheels((64 + U_FL), (192 - U_FR), (64 + U_BL), (192 - U_BR));
 }
 
 // Move the robot sharp left
 void moveLeft()
 {
-    moveWheels(44, 172, 44, 168); // back right is slow
+    moveWheels((64 - L_FL), (192 - L_FR), (64 - L_BL), (192 - L_BR));
 }
 
 // Move the robot down
 void moveDown()
 {
-    moveWheels(56, 200, 56, 200); // back two are fast (rover is back heavy)
+    moveWheels((64 - D_FL), (192 + D_FR), (64 - D_BL), (192 + D_BR));
 }
 
 // Move the robot sharp right
 void moveRight()
 {
-    moveWheels(84, 212, 84, 212); // seems ok
+    moveWheels((64 + R_FL), (192 + R_FR), (64 + R_BL), (192 + R_BR));
 }
 
 // Stop the robot
 void moveStop()
 {
-    moveWheels(0, 0, 0, 0);
+    moveWheels(STOP, STOP, STOP, STOP);
 }
