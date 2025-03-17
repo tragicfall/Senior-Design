@@ -60,3 +60,27 @@ pswd = "t3rm1n4t0r"
 ssid = "UTA Bonjour"
 pswd = "UTAbonjour"
 mac  = "??"
+
+////////////////////////////////////////////////////
+// Raspberry Pi 5 Netplan Configuration (EAP)
+////////////////////////////////////////////////////
+
+/etc/netplan/50-cloud-init.yaml
+
+network:
+  version: 2
+  ethernets:
+    eth0:
+      optional: true
+      dhcp4: true
+
+  wifis:
+    wlan0:
+      dhcp4: true
+      access-points:
+        "SSID":
+          auth:
+            key-management: eap
+            identity: "username"
+            password: "password"
+
