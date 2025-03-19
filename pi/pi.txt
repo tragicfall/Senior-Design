@@ -62,10 +62,10 @@ pswd = "UTAbonjour"
 mac  = "??"
 
 ////////////////////////////////////////////////////
-// Raspberry Pi 5 Netplan Configuration (EAP)
+// Raspberry Pi 5 Netplan Configuration (Ethernet)
 ////////////////////////////////////////////////////
 
-/etc/netplan/50-cloud-init.yaml
+- nano /etc/netplan/50-cloud-init.yaml
 
 network:
   version: 2
@@ -74,6 +74,16 @@ network:
       optional: true
       dhcp4: true
 
+- sudo netplan apply
+
+////////////////////////////////////////////////////
+// Raspberry Pi 5 Netplan Configuration (EAP)
+////////////////////////////////////////////////////
+
+- nano /etc/netplan/50-cloud-init.yaml
+
+network:
+  version: 2
   wifis:
     wlan0:
       dhcp4: true
@@ -84,3 +94,23 @@ network:
             identity: "username"
             password: "password"
 
+- sudo netplan apply
+
+////////////////////////////////////////////////////
+// Raspberry Pi 5 Netplan Configuration (PSK)
+////////////////////////////////////////////////////
+
+- nano /etc/netplan/50-cloud-init.yaml
+
+network:
+  version: 2
+  wifis:
+    wlan0:
+      dhcp4: true
+      access-points:
+        "SSID":
+          auth:
+            key-management: "psk"
+            password: "password"
+
+- sudo netplan apply
