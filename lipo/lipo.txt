@@ -1,0 +1,50 @@
+////////////////////////////////////////////////////
+// Multistar High Capacity 16000mAh LiPo Battery
+////////////////////////////////////////////////////
+
+Capacity: 16000mAh (16Ah)
+Configuration: 6S2P (6 cells in series, 2 cells in parallel)
+Voltage: 22.2V
+Continuous Discharge Rate: 10C (160A)
+Peak Discharge Rate (10 sec): 20C (320A)
+Weight: 1920g (1.92kg)
+Dimensions: 173mm x 74mm x 68mm
+Charge Plug: JST-XH
+Discharge Plug: XT90
+
+////////////////////////////////////////////////////
+// Charging Information
+////////////////////////////////////////////////////
+
+Standard Charge Rate: 1C (16A)
+Actual Charge Rate: 0.125C (2A)
+
+Fully Charged: 25.2V (4.2V per cell)
+Nominal Voltage: 22.2V (3.7V per cell)
+Safe Minimum Voltage: 19.8V (3.3V per cell)
+Absolute Minimum Voltage (Avoid): 18.0V (3.0V per cell)
+
++--------------+--------------+----------------------+
+| Percentage   | Voltage (V)  | Voltage Per Cell (V) |
++--------------+--------------+----------------------+
+| 100%         | 25.2         | 4.20                 |
+| 90%          | 24.6         | 4.10                 |
+| 80%          | 24.0         | 4.00                 |
+| 70%          | 23.4         | 3.90                 |
+| 60%          | 22.8         | 3.80                 |
+| 50%          | 22.2         | 3.70 (Nominal)       |
+| 40%          | 21.6         | 3.60                 |
+| 30%          | 21.0         | 3.50                 |
+| 20%          | 20.4         | 3.40                 |
+| 10%          | 19.8         | 3.30 (Minimum Safe)  |
+| 0%           | 18.0         | 3.00 (Dangerous)     |
++--------------+--------------+----------------------+
+
+1. Connect the JST-XH (6S) Charge Plug
+2. Connect the XT90 Discharge Plug
+3. Plug in and Power the Charging Device
+4. Select LiPo Battery
+5. Change to LiPo Balance Mode
+6. Set Charge Rate to 2A
+7. Hold "Enter" to Confirm
+8. Press "Enter" to Start Charging

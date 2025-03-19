@@ -1,0 +1,5 @@
+LiPo:
+ 1. Make mount for the battery to hold still while the bot is in motion
+ 2. Add voltage detector for the LiPo Battery to detect battery charge in percentage (0% - 100%)
+    - Maybe either a seperate circuit w/ LCD or detected by MCU or PI
+   
