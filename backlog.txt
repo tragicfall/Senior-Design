@@ -6,3 +6,10 @@ LiPo:
 DC Motors:
   1. Identify the encoder wire connections for each motor and determine how to interface with them.
   2. Implement a feedback control system on the TM4C RedBoard to adjust motor power, based on the encoder readings, ensuring the motor moves at the desired speed and position.
+
+Raspberry Pi & Power Board:
+  1. Design and create a secure mount for the Raspberry Pi and Power Board to prevent movement during the bot's operation.
+
+TM4C Redboard
+  1. Design and create a secure mount for the TM4C Redboard to prevent movement during the bot's operation.
+
