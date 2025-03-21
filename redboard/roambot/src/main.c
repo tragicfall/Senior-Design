@@ -114,7 +114,7 @@ int main(void)
     
     while(true)
     {   
-#if (SonarAttached == true)
+#if (DEBUG_SONAR == 1)
         if (echoTime < 800) controls = STOP;            // if less < 3ft stop moving       
         else
 #endif
