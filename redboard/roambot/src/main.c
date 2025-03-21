@@ -39,6 +39,10 @@
 #include "uart.h"
 #include "wait.h"
 #include "gpio.h"
+#include "sonar.h"
+
+// Temporary 
+#define DEBUG_SONAR 1
 
 //-----------------------------------------------------------------------------
 // Defines
@@ -110,8 +114,10 @@ int main(void)
     
     while(true)
     {   
-        // if (echoTime < 800) controls = STOP;            // if less < 3ft stop moving       
-        // else
+#if (SonarAttached == true)
+        if (echoTime < 800) controls = STOP;            // if less < 3ft stop moving       
+        else
+#endif
         controls = getControls();
         move(controls);
         waitMicrosecond(100000);
