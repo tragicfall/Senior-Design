@@ -18,6 +18,7 @@ CPU Usage Information: top (press 1)
 Network Details:       ifconfig
 Network Information:   sudo nano /etc/netplan/...
 Operating System Info: cat /etc/os-release
+Shutdown:              sudo shutdown now
 
 ////////////////////////////////////////////////////
 // Operating System
