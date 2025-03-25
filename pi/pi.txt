@@ -2,8 +2,8 @@
 // Raspberry Pi 5B (16GB RAM)
 ////////////////////////////////////////////////////
 
-ssh tlc@??
-address: ??
+ssh tlc@100.120.5.30
+address: 100.120.5.30
 hostname: pi
 username: tlc
 password: tlc
