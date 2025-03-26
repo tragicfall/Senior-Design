@@ -1,0 +1,9 @@
+Desired Switch Positions:
+-	Switches [1:2] = Mode (01: Simple Serial)
+-	Switches [3]   = Lithium Cutoff (1: Enabled)
+-	Switches [4:5] = Baudrate (10: 9600)
+-	Switches [6]   = Slave Mode (0: Disabled)
+-	5V TTL Logic
+
+-	Switches [1:6] = 011100
+-	Switches [1:6] = Up, Down, Down, Down, Up, Up
