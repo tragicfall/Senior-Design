@@ -22,15 +22,19 @@
 // Global Variables
 //-----------------------------------------------------------------------------
 
-uint16_t step;
-int32_t echoTime;
+uint16_t step0;
+int32_t echoTime0;
+uint16_t step1;
+int32_t echoTime1;
 
 //-----------------------------------------------------------------------------
 // Subroutines
 //-----------------------------------------------------------------------------
 
 void initSonar();
-void time2_isr();
-void echo_isr();
+void trig0_isr();
+void echo0_isr();
+void trig1_isr();
+void echo1_isr();
 
 #endif /* NAVIGATION_H_ */

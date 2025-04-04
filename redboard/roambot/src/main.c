@@ -111,6 +111,7 @@ int main(void)
     // Initialize Hardware
     uint8_t controls;
     initHw();
+    initSonar();
     
     while(true)
     {   
