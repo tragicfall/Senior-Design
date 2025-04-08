@@ -1,0 +1,15 @@
+cd ros2_ws/src
+git clone https://github.com/Adlink-ROS/rf2o_laser_odometry.git
+cd ..
+
+colcon build --packages-select rf2o_laser_odometry
+OR
+rm -rf build/ install/ log/
+colcon build --symlink-install
+
+ros2 launch rf2o_laser_odometry rf2o_laser_odometry.launch.py
+
+ros2 topic list
+ros2 topic echo /odom
+
+

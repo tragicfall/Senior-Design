@@ -1,0 +1,6 @@
+sudo chmod 777 /dev/ttyUSB0
+
+ros2 launch sllidar_ros2 sllidar_a1_launch.py
+rviz2
+OR
+ros2 launch sllidar_ros2 view_sllidar_a1_launch.py
