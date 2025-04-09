@@ -26,7 +26,9 @@
 //     U2TX (PD7) is connected to the 2nd (back) controller
 // Ultrasonic (will add a second sonar)
 //     ECHO0 PIN PD6
-//     TRIG0 PIN PB3 
+//     TRIG0 PIN PB3
+//     ECHO1 PIN PC4
+//     TRIG1 PIN PA2
 
 //-----------------------------------------------------------------------------
 // Device Includes
@@ -39,7 +41,7 @@
 #include "uart.h"
 #include "wait.h"
 #include "gpio.h"
-#include "sonar.h"
+#include "src/sonar.h"
 
 // Temporary 
 #define DEBUG_SONAR 1
@@ -102,6 +104,49 @@ void move(uint8_t controls)
     }
 }
 
+void caution(uint8_t controls)
+{
+    static uint8_t stop_l = 0,
+                   stop_r = 0;
+    switch (controls)
+    {
+        case UP:
+            moveDown();             // Go backwards
+            waitMicrosecond(50000); // Allow the lidar time to assess
+            stop_l = 0;
+            stop_r = 0;
+            break;
+        case LEFT:
+            if(stop_l == 3)         // If stopped 3 times during turning we back up a bit and start again
+            {
+                stop_l = 0;
+                moveDown();
+                waitMicrosecond(50000);
+            }
+            stop_l++;
+            stop_r = 0;
+            break;
+        case DOWN:
+            stop_l = 0;
+            stop_r = 0;
+            break;
+        case RIGHT:
+            if(stop_r == 3)
+            {
+                stop_r = 0;
+                moveDown();
+                waitMicrosecond(50000);
+            }
+            stop_r++;
+            stop_l = 0;
+            moveRight();
+            break;
+        default:
+            moveStop();
+            break;
+    }
+}
+
 //-----------------------------------------------------------------------------
 // Main
 //-----------------------------------------------------------------------------
@@ -116,11 +161,20 @@ int main(void)
     while(true)
     {   
 #if (DEBUG_SONAR == 1)
-        if (echoTime < 800) controls = STOP;            // if less < 3ft stop moving       
-        else
+        if (echoTime < 800) {
+            moveStop();
+            waitMicrosecond(30000);
+            caution(controls);
+        }
 #endif
         controls = getControls();
         move(controls);
         waitMicrosecond(100000);
     }
 }
+
+
+/*
+ * Controls go as normal until 800 detected. needs to be able to get itself out of trouble
+ * so reverse
+ */
