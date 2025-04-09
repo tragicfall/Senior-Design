@@ -161,7 +161,7 @@ int main(void)
     while(true)
     {   
 #if (DEBUG_SONAR == 1)
-        if (echoTime < 800) {
+        if ((echoTime0 < 800) || (echoTime1 < 800)) {
             moveStop();
             waitMicrosecond(30000);
             caution(controls);
