@@ -1,0 +1,45 @@
+[0.039s] Invoking command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake /home/ros2_test/Senior-Design/ROS2_Roam_Bot/src/ros2_control_demos/ros2_control_demo_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot
+[0.613s] -- The C compiler identification is GNU 13.3.0
+[1.773s] -- The CXX compiler identification is GNU 13.3.0
+[3.559s] -- Detecting C compiler ABI info
+[3.983s] -- Detecting C compiler ABI info - done
+[3.989s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.989s] -- Detecting C compile features
+[3.990s] -- Detecting C compile features - done
+[4.137s] -- Detecting CXX compiler ABI info
+[4.478s] -- Detecting CXX compiler ABI info - done
+[4.485s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[4.485s] -- Detecting CXX compile features
+[4.486s] -- Detecting CXX compile features - done
+[4.490s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[4.653s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[4.731s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.890s] -- Configuring done (4.6s)
+[4.898s] -- Generating done (0.0s)
+[4.900s] -- Build files have been written to: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot
+[4.913s] Invoked command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake /home/ros2_test/Senior-Design/ROS2_Roam_Bot/src/ros2_control_demos/ros2_control_demo_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot
+[4.915s] Invoking command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake --build /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot
+[4.965s] Invoked command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake --build /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot
+[4.976s] Invoking command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake --install /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot
+[4.986s] -- Install configuration: ""
+[4.986s] -- Execute custom install script
+[4.988s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/diffbot/urdf/diffbot.materials.xacro
+[4.999s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/diffbot/urdf/diffbot_description.urdf.xacro
+[5.008s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/diffbot/rviz/diffbot.rviz
+[5.018s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/diffbot/rviz/diffbot_view.rviz
+[5.030s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/ament_index/resource_index/package_run_dependencies/roam_bot
+[5.043s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/ament_index/resource_index/parent_prefix_path/roam_bot
+[5.057s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/environment/ament_prefix_path.sh
+[5.076s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/environment/ament_prefix_path.dsv
+[5.085s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/environment/path.sh
+[5.098s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/environment/path.dsv
+[5.108s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/local_setup.bash
+[5.116s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/local_setup.sh
+[5.127s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/local_setup.zsh
+[5.136s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/local_setup.dsv
+[5.145s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/package.dsv
+[5.153s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/ament_index/resource_index/packages/roam_bot
+[5.161s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/cmake/roam_botConfig.cmake
+[5.177s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/cmake/roam_botConfig-version.cmake
+[5.186s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/roam_bot/share/roam_bot/package.xml
+[5.200s] Invoked command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake --install /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot

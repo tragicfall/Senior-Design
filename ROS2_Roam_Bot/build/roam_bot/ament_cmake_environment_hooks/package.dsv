@@ -1,0 +1,4 @@
+source;share/roam_bot/local_setup.bash
+source;share/roam_bot/local_setup.dsv
+source;share/roam_bot/local_setup.sh
+source;share/roam_bot/local_setup.zsh

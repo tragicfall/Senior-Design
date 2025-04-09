@@ -1,0 +1,64 @@
+[0.054s] Invoking command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake /home/ros2_test/Senior-Design/ROS2_Roam_Bot/src/ros2_control_demos/example_2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2
+[0.653s] -- The CXX compiler identification is GNU 13.3.0
+[1.699s] -- Detecting CXX compiler ABI info
+[2.925s] -- Detecting CXX compiler ABI info - done
+[2.933s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.934s] -- Detecting CXX compile features
+[2.935s] -- Detecting CXX compile features - done
+[2.956s] -- Found controller_manager: 4.27.0 (/home/ros2/install/controller_manager/share/controller_manager/cmake)
+[3.180s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.278s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[3.730s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[3.767s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[3.810s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.854s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.986s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[3.995s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[4.107s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[4.355s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[4.506s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.071s] -- Found ament_cmake_pytest: 2.5.3 (/opt/ros/jazzy/share/ament_cmake_pytest/cmake)
+[7.740s] -- Configuring done (7.4s)
+[7.875s] -- Generating done (0.1s)
+[7.882s] -- Build files have been written to: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2
+[7.897s] Invoked command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake /home/ros2_test/Senior-Design/ROS2_Roam_Bot/src/ros2_control_demos/example_2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2
+[7.898s] Invoking command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake --build /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2
+[7.967s] [ 50%] [32mBuilding CXX object CMakeFiles/ros2_control_demo_example_2.dir/hardware/diffbot_system.cpp.o[0m
+[13.924s] [100%] [32m[1mLinking CXX shared library libros2_control_demo_example_2.so[0m
+[14.869s] [100%] Built target ros2_control_demo_example_2
+[14.879s] Invoked command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake --build /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2
+[14.881s] Invoking command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake --install /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2
+[14.889s] -- Install configuration: ""
+[14.889s] -- Execute custom install script
+[14.890s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2//ros2_control_demo_example_2.xml
+[14.900s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/include/ros2_control_demo_example_2/ros2_control_demo_example_2/diffbot_system.hpp
+[14.910s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/launch/view_robot.launch.py
+[14.922s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/ros2_control/diffbot.ros2_control.xacro
+[14.937s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/urdf/diffbot.urdf.xacro
+[14.948s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/launch/diffbot.launch.py
+[14.958s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/config/diffbot_controllers.yaml
+[14.973s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/environment/library_path.sh
+[14.983s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/environment/library_path.dsv
+[14.997s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ament_index/resource_index/package_run_dependencies/ros2_control_demo_example_2
+[15.009s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ament_index/resource_index/parent_prefix_path/ros2_control_demo_example_2
+[15.021s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/environment/ament_prefix_path.sh
+[15.030s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/environment/ament_prefix_path.dsv
+[15.047s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/environment/path.sh
+[15.059s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/environment/path.dsv
+[15.071s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/local_setup.bash
+[15.086s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/local_setup.sh
+[15.100s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/local_setup.zsh
+[15.111s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/local_setup.dsv
+[15.124s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/package.dsv
+[15.135s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ament_index/resource_index/packages/ros2_control_demo_example_2
+[15.151s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/ros2_control_demo_example_2
+[15.164s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/cmake/ament_cmake_export_targets-extras.cmake
+[15.174s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/cmake/ament_cmake_export_dependencies-extras.cmake
+[15.194s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/cmake/ros2_control_demo_example_2Config.cmake
+[15.205s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/cmake/ros2_control_demo_example_2Config-version.cmake
+[15.217s] -- Symlinking: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/package.xml
+[15.228s] -- Installing: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/lib/libros2_control_demo_example_2.so
+[15.231s] -- Set non-toolchain portion of runtime path of "/home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/lib/libros2_control_demo_example_2.so" to ""
+[15.231s] -- Installing: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/cmake/export_ros2_control_demo_example_2Export.cmake
+[15.231s] -- Installing: /home/ros2_test/Senior-Design/ROS2_Roam_Bot/install/ros2_control_demo_example_2/share/ros2_control_demo_example_2/cmake/export_ros2_control_demo_example_2Export-noconfig.cmake
+[15.234s] Invoked command in '/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ros2/install/rqt_joint_trajectory_controller:/home/ros2/install/rqt_controller_manager:/home/ros2/install/ros2controlcli:/home/ros2/install/ros2_controllers_test_nodes:/opt/ros/jazzy /usr/bin/cmake --install /home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/ros2_control_demo_example_2
