@@ -1,1 +1,0 @@
-/home/ros2_test/Senior-Design/ROS2_Roam_Bot/build/roam_bot/ament_cmake_core/roam_botConfig-version.cmake
