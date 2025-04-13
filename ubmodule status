@@ -1,0 +1,656 @@
+[33mcommit f23ae63d52d87c3c505d4a54a0effc8dd42d1291[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 0614967 2d778a4
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Sat Apr 12 21:37:03 2025 -0500
+
+    Merge pull request #2 from tragicfall/fixing-hardware-interface (CLONED AND TESTED)
+    
+    Fixing hardware interface
+
+[33mcommit 2d778a4cf72ec3f1e9358986f44763485bfb3209[m[33m ([m[1;31morigin/fixing-hardware-interface[m[33m)[m
+Author: root <root@AKGamingLaptop.>
+Date:   Sat Apr 12 21:30:53 2025 -0500
+
+    Added improved hardware interface (TO BE TESTED)
+
+[33mcommit b38a4609c556370aed51df8bbef4f471caf67cf4[m
+Author: root <root@AKGamingLaptop.>
+Date:   Sat Apr 12 21:21:09 2025 -0500
+
+    Deleted Hardware Interface
+
+[33mcommit 06149676223daee79ce74e35fd5458277d362569[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Fri Apr 11 19:05:22 2025 -0500
+
+    Update diffbot_system.hpp
+
+[33mcommit 7e50c439894a1f8769b28924e576fd8a5771592f[m
+Merge: 6d99337 b0e235d
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Fri Apr 11 14:12:34 2025 -0500
+
+    Merge pull request #1 from tragicfall/adding-ros2-roam-bot
+    
+    merging ros2 roam bot
+
+[33mcommit b0e235d9529f80af9f6d84d5873bca47b802df0d[m[33m ([m[1;31morigin/adding-ros2-roam-bot[m[33m)[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Fri Apr 11 02:25:55 2025 -0500
+
+    Update diffbot.ros2_control.xacro
+
+[33mcommit dbcb804e74a44aa5eb35063dbcc32698c248838c[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Fri Apr 11 02:17:08 2025 -0500
+
+    Update package.xml
+
+[33mcommit 93426df94a6657463899225bf8c5af17b0e5ac7d[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Fri Apr 11 02:15:59 2025 -0500
+
+    Update CMakeLists.txt
+
+[33mcommit b7bcda077d86a1c633f530a4c5301448fe3c3b9c[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Fri Apr 11 02:14:43 2025 -0500
+
+    added wheel.hpp and arduino_comms
+
+[33mcommit b18cef5b3a4a343864974e71789d12a20149f8a3[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Fri Apr 11 02:12:54 2025 -0500
+
+    Update diffbot_system.hpp
+
+[33mcommit ed050f1035b47e3274cf42208d7d1106499b8f62[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Fri Apr 11 02:12:14 2025 -0500
+
+    Update diffbot_system.cpp
+
+[33mcommit 6d99337ced673b2806ce79fbe778a11ad786669b[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Wed Apr 9 15:49:08 2025 -0500
+
+    echoTime changed to echoTime0 and echoTime1
+
+[33mcommit c385cb6ae27eead528f4b7974cec2f29fb6760ac[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Wed Apr 9 15:34:16 2025 -0500
+
+    added more support for sonar
+
+[33mcommit 61cf6b19b936ad991074f872b4c8321cdc1af2d9[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Wed Apr 9 15:31:16 2025 -0500
+
+    The layout of the pcb board
+
+[33mcommit 97c610fbd0db60e119e9eb1af68e968cec266de6[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Wed Apr 9 00:54:31 2025 -0500
+
+    Create placeholder.txt
+
+[33mcommit aeaa08c665e3d21cf427d9255bf577a02ba8d305[m
+Author: root <root@AKGamingLaptop.>
+Date:   Wed Apr 9 00:51:15 2025 -0500
+
+    fixed CMakeList.txt
+
+[33mcommit 36f0926c6ab2550de95488685a57ffe322fd8b22[m
+Author: root <root@AKGamingLaptop.>
+Date:   Wed Apr 9 00:49:06 2025 -0500
+
+    fixed CMakeList.txt
+
+[33mcommit cdbe77305013292f6541622afd85615636e90af1[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Tue Apr 8 21:41:23 2025 -0500
+
+    added roam_bot
+    
+    need to text it works
+
+[33mcommit 0f8e2dc20fbcf65a3fc8ae9556c97176411e12d2[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Tue Apr 8 21:28:14 2025 -0500
+
+    Create placeholder.txt
+
+[33mcommit e8e38682e288120a2c7dcb094c2c7d6fd98b18ae[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Tue Apr 8 21:27:49 2025 -0500
+
+    Delete ROS2_Roam_Bot/src
+
+[33mcommit 7fed7d5cfa6709d1d9a8a9e096213d3cf3ae6acc[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Tue Apr 8 21:26:12 2025 -0500
+
+    Create src
+
+[33mcommit a3133de33e2ed8fb418b3b0d95dba02d2bdbe493[m
+Author: Abubakar Kassim <142273851+RSG0@users.noreply.github.com>
+Date:   Tue Apr 8 18:26:35 2025 -0500
+
+    Create placeholder.txt
+
+[33mcommit 35fc48f812fee3be4bd3f666f2e3146b7ca78947[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Apr 8 07:43:36 2025 -0500
+
+    Modified rover schematic
+
+[33mcommit c38a850333b7fb4ba8d5f04b85c3bc4fc9299de6[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Apr 8 05:39:49 2025 -0500
+
+    Added ros2 packages
+    
+    Packages include testing for lidar drivers, localization, and mapping
+
+[33mcommit c5489e45031c00380bfada80435c2e9aaeb0981e[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Apr 8 05:35:25 2025 -0500
+
+    Added ros2 packages
+    
+    Packages include testing for lidar drivers, localization, and mapping
+
+[33mcommit 07c946c515763a3d3a48e667de10edfd777e00bb[m
+Merge: cc67455 e25e842
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Apr 4 15:39:53 2025 -0500
+
+    Merge branch 'main' of https://github.com/tragicfall/Senior-Design
+
+[33mcommit cc67455a24be04ae1e25ab9cacb23768b6d2b21a[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Apr 4 15:39:12 2025 -0500
+
+     now with 2 sonar
+
+[33mcommit 4a536f7bc4a02bd6928b54567149313be8f012af[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Apr 4 15:38:53 2025 -0500
+
+    interrupts added
+
+[33mcommit e25e84202599a6db68b14839a84edcb79775acd8[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Apr 4 15:27:38 2025 -0500
+
+    Added pi ip
+
+[33mcommit e611d1fafa87360bb191cfbf9ad2eaa313c005e7[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Mar 28 15:57:44 2025 -0500
+
+    Update pi.txt
+
+[33mcommit f2b579a76e48187dca3eccaface432b1cd651201[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Mar 28 15:57:13 2025 -0500
+
+    Update accounts.txt
+
+[33mcommit 6df45f6941672224ea01f7c867e65912baa03086[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 26 17:19:04 2025 -0500
+
+    Create lidar_datasheet.pdf
+
+[33mcommit b552cfbe916ec929af00fbdf056c69ef20f7ff1f[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 26 17:16:32 2025 -0500
+
+    Added more datasheets
+
+[33mcommit 874fddb204e8a25207aa9e70ffee4fe7a22e533c[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 26 17:00:53 2025 -0500
+
+    Create pi_datasheet.pdf
+
+[33mcommit d22f8501118e3cc81ea6afb5912ae9104fd741ce[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 26 16:51:02 2025 -0500
+
+    Create pdboard_datasheet.pdf
+
+[33mcommit f5fa68bf44b3478abe4f8e84443dc253bad632d3[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 26 16:48:38 2025 -0500
+
+    Consolidated datasheets and information
+
+[33mcommit 5ecb36fa16bcd188e4f631d5bdcbbfb15730027f[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 26 05:24:18 2025 -0500
+
+    Modified accounts
+
+[33mcommit 874129bbbfef1eaaee5454e75036fb481323cd95[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Mar 25 03:46:41 2025 -0500
+
+    Update pi.txt
+
+[33mcommit c7fc9144f13908a9dd892e10407117934ff308dc[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Mar 25 03:44:16 2025 -0500
+
+    Update pi.txt
+
+[33mcommit bcd82043e9dba1614b6e35d83d93f460ad228b38[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Mar 25 02:12:00 2025 -0500
+
+    Create outlook.txt
+
+[33mcommit 6aa3a0689f55820fe110cd242b6f14992b6a2134[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Mar 21 15:31:17 2025 -0500
+
+    soanr
+
+[33mcommit 3b2e112e1ccdef0bd8fb5d3937681f6045d517df[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Mar 21 15:24:28 2025 -0500
+
+    sonar #if
+
+[33mcommit a76f6a9339eb7357107a2c662f9003daf355a165[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Mar 20 00:16:45 2025 -0500
+
+    Update backlog.txt
+
+[33mcommit 29b6f2785cb102ec0dd602457859618570166432[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 19 15:58:45 2025 -0500
+
+    Added more netplan configurations
+
+[33mcommit 9f5bf931b3b09e88f0ec1fc2175580b34e743f3f[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 19 00:00:29 2025 -0500
+
+    Added documentation for motors
+
+[33mcommit e53297e3edfd3732a5ea12cc52bed720c60ef3e3[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Mar 18 23:52:39 2025 -0500
+
+    Added documentation for lipo
+
+[33mcommit a83f43667c510ce81a77a9d3273f24d6a7fcd583[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Mar 17 18:26:02 2025 -0500
+
+    Update pi.txt
+
+[33mcommit 8f52219c85bbd38180c0e3c9c8514b3f9483cd18[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Mar 17 17:56:06 2025 -0500
+
+    Update pi.txt
+
+[33mcommit 215719c5691b6da600aad0c60d7cd6ce3e7330b7[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Mar 17 17:46:47 2025 -0500
+
+    Update pi.txt
+
+[33mcommit 9e409edcb2442b58bfc8a2b0764083d151b39791[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Sun Mar 16 02:20:06 2025 -0500
+
+    Fixed notes about wheel power levels
+
+[33mcommit 0fea414257b4481effde56cf89c5e72e4a2baf48[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Sat Mar 15 22:22:17 2025 -0500
+
+    Fixed gpio control
+
+[33mcommit 18dc90310073c88adfe24213aeea88c39293eddd[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Sat Mar 15 22:21:26 2025 -0500
+
+    Tuned controls
+
+[33mcommit 9f1eae38ab8c76a03d89645d1583006bcd399b20[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Mar 14 22:27:25 2025 -0500
+
+    Started live movement testing
+
+[33mcommit 0731638434e3a9e211ed786348b75a3de4e0589e[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Mar 7 16:13:53 2025 -0600
+
+    updated hw config comment
+
+[33mcommit 7a248b99e0e62d0d15d7638f8887e3a4923b2e6b[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Mar 7 16:12:50 2025 -0600
+
+    updated hw config comment to include sonar pins
+
+[33mcommit 2c8b21ab8c9e4266d16cee0da44809f291f54356[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Mar 7 15:43:00 2025 -0600
+
+    Added stop based on sonar info
+
+[33mcommit 0fd5a775516051f8f030bf6d521f49c89be47747[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Mar 7 15:38:09 2025 -0600
+
+    commented
+
+[33mcommit e4f62033d415a68f725067b6585f5730017d8961[m
+Author: littleone705 <madison.gage@mavs.uta.edu>
+Date:   Fri Mar 7 15:17:32 2025 -0600
+
+    uncommented sonar files
+
+[33mcommit 198b0e566b1b2dc8834a0e1e8b783863e12461a9[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Mar 5 16:48:32 2025 -0600
+
+    Condensed movement decision
+    
+    Added move() function in main to encapsulate all movement decisions based on the controls
+
+[33mcommit 42e4d360a5188dd92de27e912dd970774099f41b[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Feb 28 23:59:30 2025 -0600
+
+    Added the DDS revised documents
+
+[33mcommit 880d698e80d85f9d71cd47ee30c775068a0f9269[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Feb 28 03:43:09 2025 -0600
+
+    Create sabertooth.JPG
+
+[33mcommit 66ca8b579afbb1681db752bf57f550c6baa822d1[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Feb 28 03:37:17 2025 -0600
+
+    Create redboard.JPG
+
+[33mcommit aa8cc7a29477b070102fd68481f830ab2d86ae82[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Feb 28 00:35:39 2025 -0600
+
+    Fixed movement
+
+[33mcommit 540b8e25c30b03518033ba6ab13ae8a4ef90cf3d[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Feb 27 17:02:05 2025 -0600
+
+    Fixed movement layer
+
+[33mcommit e1055edfea2b59ccd164cf923ed2e6c32d7b7abd[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Feb 27 02:52:08 2025 -0600
+
+    Fixed diagrams
+
+[33mcommit c5a8d66fbf89a45eadab4b2768eadfe2be61177a[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Feb 25 02:36:19 2025 -0600
+
+    Added dds template
+
+[33mcommit e855e35a234edd6db089f4dc7196ba499ee5b5da[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Feb 21 16:20:13 2025 -0600
+
+    Added docs for ros2
+
+[33mcommit 937dbcf3fbe8c03a6e9c163c6d747a0706b5286c[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Feb 21 12:14:34 2025 -0600
+
+    Update readme.txt
+
+[33mcommit dabe429b7669164bc82fc30ebf1d758bc04b5ba4[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Feb 21 12:13:02 2025 -0600
+
+    Update readme.txt
+
+[33mcommit 29c6ba671883afcdc4ef6148a15b6a8cc23b8de9[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Feb 20 00:26:59 2025 -0600
+
+    Update vhb50w.pdf
+
+[33mcommit 4ad2ffe561793df9fbe8047b851808cb86f570fd[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Feb 20 00:25:07 2025 -0600
+
+    Added docs
+
+[33mcommit a365b4e21a8684e3d25df556682a4faeeefcf46c[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Feb 13 00:45:01 2025 -0600
+
+    Update readme.txt
+
+[33mcommit efce2ce941ab4c15eb85c7fd2c85f062f0f55cd2[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Feb 12 23:35:03 2025 -0600
+
+    Fixed redboard code
+
+[33mcommit 5efb6a52dbe0ccdde0926ebbd264e552de759e9d[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Feb 12 23:24:34 2025 -0600
+
+    Fixed the server/client
+
+[33mcommit bc187f117717a1ef58dc99c65cdb319d445a3b71[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Feb 12 17:34:12 2025 -0600
+
+    Update readme.txt
+
+[33mcommit 18340e0fc777d2b6a09e63e23c9b8a8f4a01cb2c[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Sun Feb 2 13:19:46 2025 -0600
+
+    Fixed testing
+
+[33mcommit df52881414b8d297a4be33f124d75e9ac6bff6f9[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Jan 30 00:14:19 2025 -0600
+
+    Cleaned up libraries
+
+[33mcommit b4ff62c964444f68b8eaa9efd901b2a035291700[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Jan 29 20:54:20 2025 -0600
+
+    Added controls to tm4c
+
+[33mcommit a95ca07b376d432056181e09c7b0588f07009a2c[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Jan 29 19:30:17 2025 -0600
+
+    Fixed UART test
+
+[33mcommit 67c9f4685e7b2f4a26ccd74835c659541c627469[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Sat Jan 25 04:39:40 2025 -0600
+
+    Create sabertooth.docx
+
+[33mcommit 049baa4c14a18d7bcf0127d0113142d3a7850244[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Sat Jan 25 04:24:46 2025 -0600
+
+    Added more docs
+
+[33mcommit 34dd4155930fe27dcec50c63f9bdeffd6d32cedc[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Jan 24 17:17:20 2025 -0600
+
+    Updated tests
+
+[33mcommit a802596617ac97b9d261384a5b5c9adee973f393[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Jan 24 15:28:50 2025 -0600
+
+    Update readme.txt
+
+[33mcommit 2c2378d34565aa480738af19cb8b4513dbbe2a99[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Jan 22 22:51:29 2025 -0600
+
+    Update server.py
+
+[33mcommit c9bf538da14fe3f6828d8a7a08fc18e4eba99713[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Jan 22 03:21:12 2025 -0600
+
+    Updated server and client
+
+[33mcommit ff2fe62c567e333655490fb50e98d13fbb445216[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Jan 21 23:34:04 2025 -0600
+
+    Create readme.txt
+
+[33mcommit 2201b51bc5fc0607f5a1bb057a2a472d499b84b8[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Jan 21 23:34:01 2025 -0600
+
+    Delete README.txt
+
+[33mcommit f65049e970329e3843330c44aafdcfaf87b1477f[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Jan 21 23:32:08 2025 -0600
+
+    Create pinout.png
+
+[33mcommit 97e8f461c0fa4399979193f758e54d1e8187ef4b[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Jan 21 22:26:55 2025 -0600
+
+    Fixed client/server messages
+
+[33mcommit 15d4b2970073fb9512452ed8890d31dd51c8122c[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Jan 21 18:39:39 2025 -0600
+
+    Update client.py
+
+[33mcommit 8e24878bc30f71a60b057223171827d6330b9157[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Jan 21 17:42:21 2025 -0600
+
+    Updated server
+
+[33mcommit 236fcbeeb00d600954313c473aacfa54caf23dc5[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Jan 21 13:24:52 2025 -0600
+
+    Working on server/client
+
+[33mcommit 4dafab15d57770b4c7310f7b71fd5b31bab6053b[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Jan 20 15:48:26 2025 -0600
+
+    Changed file location
+
+[33mcommit 8e13245d99e260c6a2cb07cd92c10fbefb59bd0a[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Jan 20 15:22:29 2025 -0600
+
+    Update README.txt
+
+[33mcommit 973019b67bb22f8a5f7b12390056b60e3a69b743[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Dec 12 22:40:59 2024 -0600
+
+    Update README.txt
+
+[33mcommit 065d63aced386b60b690eb6b44f8e9492a8396dd[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Dec 12 22:26:20 2024 -0600
+
+    Create README.txt
+
+[33mcommit 96167c07b65be389cc7cb6e39c94b7531f1cc76d[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Dec 12 22:17:00 2024 -0600
+
+    Added raspberry pi code
+
+[33mcommit 60f711749e61a404a0b48d536abb7aedfe2b9967[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Nov 25 23:55:19 2024 -0600
+
+    Added in the full ADS project
+
+[33mcommit 26b9a8365f73a6239e3139078ab0cfe03bf44439[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Nov 25 23:52:53 2024 -0600
+
+    Fixed data flow diagram
+
+[33mcommit e7fde2c367b10fe21b1bc82cacf201c6570dbbe3[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Wed Nov 20 02:12:03 2024 -0600
+
+    Added full movement subsystems
+
+[33mcommit ed573112d73e880ccc7c80bbef493d2fd5c950bf[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Nov 19 23:08:45 2024 -0600
+
+    Fixed the movement diagram
+
+[33mcommit ef4b5b1b3f6c3e6295333e6fd1b7fa83f0922031[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Nov 19 23:04:17 2024 -0600
+
+    Added movement subsystem diagram
+
+[33mcommit a83b02cace9564804d3cae5377c1fa9ed2d2cd1f[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Tue Nov 19 22:35:10 2024 -0600
+
+    Added diagrams
+
+[33mcommit b17fd300d522018ef164d7266cefffff0f0462d9[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Oct 28 22:31:27 2024 -0500
+
+    Renamed project charter PDF
+
+[33mcommit b91f867e09db3925a35ee4a8b6fbd53320396159[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Mon Oct 28 22:30:48 2024 -0500
+
+    Added the SRS document
+
+[33mcommit fbfa3b2829d990beeba87a288079ba53bef80671[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Fri Oct 25 16:36:37 2024 -0500
+
+    Create Project Charter.pdf
+
+[33mcommit 458aa259d5b9ede928a71d73b3aec1b27001913d[m
+Author: mannndrew <mannndrew@gmail.com>
+Date:   Thu Oct 24 15:15:39 2024 -0500
+
+    Added the project reports
