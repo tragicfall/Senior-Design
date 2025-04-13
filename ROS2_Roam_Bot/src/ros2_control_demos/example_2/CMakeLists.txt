@@ -44,6 +44,10 @@ ament_target_dependencies(
   ${THIS_PACKAGE_INCLUDE_DEPENDS}
 )
 
+link_directories(/usr/lib/x86_64-linux-gnu)
+target_include_directories(ros2_control_demo_example_2 PUBLIC /usr/include)
+target_link_libraries(ros2_control_demo_example_2 PUBLIC serial)
+
 # Export hardware plugins
 pluginlib_export_plugin_description_file(hardware_interface ros2_control_demo_example_2.xml)
 
