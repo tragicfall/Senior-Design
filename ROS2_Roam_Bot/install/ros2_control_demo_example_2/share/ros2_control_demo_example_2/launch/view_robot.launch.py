@@ -1,1 +1,0 @@
-/home/ros2_senior/Senior-Design/ROS2_Roam_Bot/src/ros2_control_demos/example_2/description/launch/view_robot.launch.py
