@@ -3,6 +3,16 @@
 ######################################################################
 
 ##### SETUP #####
+# sudo apt update
+# sudo apt install python3-venv -y
+# cd ~/roambot
+# python3 -m venv myenv
+# source ~/roambot/myenv/bin/activate
+# pip install pyserial
+
+##### TO RUN #####
+# sudo ~/roambot/myenv/bin/python3 ~/roambot/serial_test.py
+
 # ls /dev/tty*
 # sudo nano /boot/firmware/config.txt
 # enable_uart=1
