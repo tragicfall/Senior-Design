@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'fake_odom_pkg'
+package_name = 'driver_ros2'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-		'fake_odom_publisher = fake_odom_pkg.fake_odom_publisher:main',
+            'cmd_vel_to_serial = driver_ros2.cmd_vel_to_serial:main',
         ],
     },
 )
