@@ -13,7 +13,7 @@
 # pip install pygame
 
 ##### TO RUN #####
-# sudo ./myenv/bin/python3 gpio_test.py
+# sudo ~/roambot/myenv/bin/python3 ~/roambot/gpio_test.py
 
 ######################################################################
 ## Imports
