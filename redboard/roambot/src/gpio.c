@@ -59,7 +59,7 @@ void initGPIO()
 }
 
 // Read the controls from the GPIO Port D (9 samples)
-uint8_t getControls()
+uint8_t getControlsGPIO()
 {
     uint8_t up_count = 0;
     uint8_t left_count = 0;

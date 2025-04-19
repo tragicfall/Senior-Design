@@ -16,11 +16,8 @@
 // System Clock:    40 MHz
 
 // Hardware configuration
-// GPIO Input Interface:
-//     GPIO PIN PD0 - Input to go Up
-//     GPIO PIN PD1 - Input to go Left
-//     GPIO PIN PD2 - Input to go Down
-//     GPIO PIN PD3 - Input to go Right
+// UART Input Interface:
+//     U3RX (PC6) is connected to the pi controller
 // UART Outut Interface:
 //     U1TX (PB1) is connected to the 1st (front) controller
 //     U2TX (PD7) is connected to the 2nd (back) controller
@@ -40,7 +37,7 @@
 #include "clock.h"
 #include "uart.h"
 #include "wait.h"
-#include "gpio.h"
+#include "serial.h"
 #include "src/sonar.h"
 
 // Temporary 
@@ -66,8 +63,8 @@ void initHw(void)
     // Initialize system clock to 40 MHz
     initSystemClockTo40Mhz();
 
-    // Initialize GPIO
-    initGPIO();
+    // Initialize Serial
+    initSerial();
 
     // Initialize Both UART
     initUart1();
@@ -82,29 +79,22 @@ void initHw(void)
 // Interface Functions
 //-----------------------------------------------------------------------------
 
-void move(uint8_t controls)
+void move(uint32_t controls)
 {
-    switch (controls)
-    {
-        case UP:
-            moveUp();
-            break;
-        case LEFT:
-            moveLeft();
-            break;
-        case DOWN:
-            moveDown();
-            break;
-        case RIGHT:
-            moveRight();
-            break;
-        default:
-            moveStop();
-            break;
-    }
+    uint8_t frontLeft;
+    uint8_t frontRight;
+    uint8_t backLeft;
+    uint8_t backRight;
+
+    frontLeft  = (controls >> 24) & 0xFF;
+    frontRight = (controls >> 16) & 0xFF;
+    backLeft   = (controls >> 8) & 0xFF;
+    backRight  = (controls >> 0) & 0xFF;
+
+    moveWheels(frontLeft, frontRight, backLeft, backRight);
 }
 
-void caution(uint8_t controls)
+void caution(uint32_t controls)
 {
     static uint8_t stop_l = 0,
                    stop_r = 0;
@@ -154,7 +144,7 @@ void caution(uint8_t controls)
 int main(void)
 {
     // Initialize Hardware
-    uint8_t controls;
+    uint32_t controls;
     initHw();
     initSonar();
     
@@ -167,9 +157,9 @@ int main(void)
             caution(controls);
         }
 #endif
-        controls = getControls();
+        controls = getControlsSerial(controls);
         move(controls);
-        waitMicrosecond(100000);
+        waitMicrosecond(1000);
     }
 }
 

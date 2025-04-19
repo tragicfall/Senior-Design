@@ -1,5 +1,5 @@
-// GPIO Library (Header)
-// File: gpio.h
+// Serial Library (Header)
+// File: serial.h
 // Group Members:
 // - Christopher David
 // - Madison Gage
@@ -15,18 +15,16 @@
 // Target uC:       TM4C123GH6PM
 // System Clock:    40 MHz
 
-// Hardware configuration
-// GPIO PIN PD0 - Input to go Right
-// GPIO PIN PD1 - Input to go Down
-// GPIO PIN PD2 - Input to go Left
-// GPIO PIN PD3 - Input to go Up
+// Hardware configuration:
+// UART Interface:
+//   U3RX (PC6) and U3TX (PC7) are connected to the pi controller
 
 //-----------------------------------------------------------------------------
 // Preprocessor Directive
 //-----------------------------------------------------------------------------
 
-#ifndef GPIO_H_
-#define GPIO_H_
+#ifndef SERIAL_H_
+#define SERIAL_H_
 
 //-----------------------------------------------------------------------------
 // Device Includes
@@ -38,7 +36,8 @@
 // Subroutines
 //-----------------------------------------------------------------------------
 
-void    initGPIO();
-uint8_t getControlsGPIO();
+void initSerial();
+void setUart3BaudRate(uint32_t baudRate, uint32_t fcyc);
+uint32_t getControlsSerial(uint32_t previous_controls);
 
 #endif

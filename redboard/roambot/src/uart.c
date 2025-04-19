@@ -82,7 +82,7 @@ void initUart1()
     _delay_cycles(3);
 
     // Configure UART1 pins
-    GPIO_PORTD_DIR_R |= UART2_TX_MASK;
+    GPIO_PORTB_DIR_R |= UART1_TX_MASK;
     GPIO_PORTB_DR2R_R |= UART1_TX_MASK;                  // set drive strength to 2mA (not needed since default configuration -- for clarity)
     GPIO_PORTB_DEN_R |= UART1_TX_MASK | UART1_RX_MASK;    // enable digital on UART1 pins
     GPIO_PORTB_AFSEL_R |= UART1_TX_MASK | UART1_RX_MASK;  // use peripheral to drive PB0, PB1
@@ -100,13 +100,13 @@ void setUart1BaudRate(uint32_t baudRate, uint32_t fcyc)
     UART1_IBRD_R = divisorTimes128 >> 6;                            // set integer value
     UART1_FBRD_R = divisorTimes128 & 0b111111;                      // set fractional value
     UART1_LCRH_R = UART_LCRH_WLEN_8 | UART_LCRH_FEN;                // configure for 8N1 w/ 16-level FIFO
-    UART1_CTL_R = UART_CTL_TXE | UART_CTL_RXE | UART_CTL_UARTEN;    // turn-on UART0
+    UART1_CTL_R = UART_CTL_TXE | UART_CTL_RXE | UART_CTL_UARTEN;    // turn-on UART1
 }
 
 // Write value to UART1
 void putiUart1(uint32_t i)
 {
-    while (UART1_FR_R & UART_FR_TXFF);               // wait if uart0 tx fifo full
+    while (UART1_FR_R & UART_FR_TXFF);               // wait if uart1 tx fifo full
     UART1_DR_R = i;                                  // write character to fifo
 }
 
@@ -140,13 +140,13 @@ void setUart2BaudRate(uint32_t baudRate, uint32_t fcyc)
     UART2_IBRD_R = divisorTimes128 >> 6;                            // set integer value
     UART2_FBRD_R = divisorTimes128 & 0b111111;                      // set fractional value
     UART2_LCRH_R = UART_LCRH_WLEN_8 | UART_LCRH_FEN;                // configure for 8N1 w/ 16-level FIFO
-    UART2_CTL_R = UART_CTL_TXE | UART_CTL_RXE | UART_CTL_UARTEN;    // turn-on UART0
+    UART2_CTL_R = UART_CTL_TXE | UART_CTL_RXE | UART_CTL_UARTEN;    // turn-on UART2
 }
 
 // Write value to UART2
 void putiUart2(uint32_t i)
 {
-    while (UART2_FR_R & UART_FR_TXFF);               // wait if uart0 tx fifo full
+    while (UART2_FR_R & UART_FR_TXFF);               // wait if uart2 tx fifo full
     UART2_DR_R = i;                                  // write character to fifo
 }
 
