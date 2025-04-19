@@ -71,8 +71,9 @@ void initHw(void)
     initUart2();
 
     // Set Baud Rate = 9600
-    setUart1BaudRate(9600, 40000000);
-    setUart2BaudRate(9600, 40000000);
+    setUart1BaudRate(9600,   40000000);
+    setUart2BaudRate(9600,   40000000);
+    setUart3BaudRate(115200, 40000000);
 }
 
 //-----------------------------------------------------------------------------

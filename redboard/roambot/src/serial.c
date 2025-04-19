@@ -44,7 +44,8 @@
 void initSerial()
 {
     // Enable clocks
-    SYSCTL_RCGCUART_R |= SYSCTL_RCGCUART_R2;
+    SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R2;
+    SYSCTL_RCGCUART_R |= SYSCTL_RCGCUART_R3;
     _delay_cycles(3);
 
     // Configure UART3 pins
