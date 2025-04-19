@@ -44,7 +44,7 @@
 #include "src/sonar.h"
 
 // Temporary 
-#define DEBUG_SONAR 1
+#define DEBUG_SONAR 0
 
 //-----------------------------------------------------------------------------
 // Defines
