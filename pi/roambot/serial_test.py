@@ -27,7 +27,7 @@ import pygame
 ######################################################################
 
 def setup_serial():
-    return serial.Serial('/dev/ttyUSB0', 115200)
+    return serial.Serial('/dev/ttyUSB1', 115200)
 
 def clean_serial(ser):
     ser.close()

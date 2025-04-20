@@ -1,0 +1,11 @@
+sudo nano /etc/udev/rules.d/99-usb-devices.rules
+
+# Microcontroller (CP2102N)
+SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ENV{ID_MODEL}=="CP2102N_USB_to_UART_Bridge_Controller", SYMLINK+="ttyUSB1"
+
+# LiDAR (CP2102)
+SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ENV{ID_MODEL}=="CP2102_USB_to_UART_Bridge_Controller", SYMLINK+="ttyUSB0"
+
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+sudo reboot
