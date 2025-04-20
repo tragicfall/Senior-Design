@@ -71,17 +71,21 @@ void setUart3BaudRate(uint32_t baudRate, uint32_t fcyc)
 }
 
 // Non-blocking function that returns with serial data once the buffer is not empty
-uint32_t getControlsSerial(uint32_t previous_controls)
+uint32_t getControlsSerial(uint32_t current_controls)
 {
-    uint32_t data_word = 0;
-    uint8_t frontLeft = 0;
-    uint8_t frontRight = 0;
-    uint8_t backLeft = 0;
-    uint8_t backRight = 0;
+    uint32_t new_controls;
+    uint8_t frontLeft;
+    uint8_t frontRight;
+    uint8_t backLeft;
+    uint8_t backRight;
+
+    uint32_t receive_controls_new = 0;
+    static uint32_t receive_controls_previous;
+    static uint8_t reliable_count;
 
     if (UART3_FR_R & UART_FR_RXFE) // if fifo empty
     {
-        data_word = previous_controls; // return previous controls
+        new_controls = current_controls; // return previous controls
     }
     
     else
@@ -91,11 +95,23 @@ uint32_t getControlsSerial(uint32_t previous_controls)
         backLeft   = UART3_DR_R; // read third byte
         backRight  = UART3_DR_R; // read fourth byte
 
-        data_word = data_word | (frontLeft  << 24); // shift first byte to the left by 24 bits
-        data_word = data_word | (frontRight << 16); // shift second byte to the left by 16 bits
-        data_word = data_word | (backLeft   << 8);  // shift third byte to the left by 8 bits
-        data_word = data_word | (backRight  << 0);  // shift fourth byte to the left by 0 bits
+        receive_controls_new = receive_controls_new | (frontLeft  << 24); // shift first byte to the left by 24 bits
+        receive_controls_new = receive_controls_new | (frontRight << 16); // shift second byte to the left by 16 bits
+        receive_controls_new = receive_controls_new | (backLeft   << 8);  // shift third byte to the left by 8 bits
+        receive_controls_new = receive_controls_new | (backRight  << 0);  // shift fourth byte to the left by 0 bits
+
+        if (receive_controls_new == receive_controls_previous)
+            reliable_count++;
+        else
+            reliable_count = 0;
+
+        if (reliable_count > 1)
+            new_controls = receive_controls_new;
+        else
+            new_controls = current_controls;
+
+        receive_controls_previous = receive_controls_new;
     }
 
-    return data_word;
+    return new_controls;
 }

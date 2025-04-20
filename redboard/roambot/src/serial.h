@@ -38,6 +38,6 @@
 
 void initSerial();
 void setUart3BaudRate(uint32_t baudRate, uint32_t fcyc);
-uint32_t getControlsSerial(uint32_t previous_controls);
+uint32_t getControlsSerial(uint32_t current_controls);
 
 #endif
