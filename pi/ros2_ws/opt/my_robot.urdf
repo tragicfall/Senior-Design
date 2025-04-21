@@ -84,7 +84,7 @@
   <joint name="base_laser_joint" type="fixed">
     <parent link="base_link"/>
     <child link="laser"/>
-    <origin xyz="0 0 0.225" rpy="0 0 0"/>
+    <origin xyz="0 0 0.225" rpy="0 0 3.1416"/>
   </joint>
 
   <joint name="base_front_left_wheel_joint" type="fixed">
