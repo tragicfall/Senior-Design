@@ -1,0 +1,8 @@
+sudo apt update -y
+sudo apt install ros-jazzy-navigation2 -y
+sudo apt install ros-jazzy-nav2-bringup -y
+
+# Then in another terminal, launch Nav2
+ros2 launch nav2_bringup navigation_launch.py use_sim_time:=false autostart:=true
+
+ros2 topic echo /cmd_vel
