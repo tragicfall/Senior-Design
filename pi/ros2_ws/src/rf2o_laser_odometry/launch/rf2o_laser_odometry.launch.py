@@ -23,6 +23,7 @@ def generate_launch_description():
                 output='screen',
                 parameters=[{
                     'laser_scan_topic' : '/scan',
+                    'odom_topic' : '/odom',
                     'publish_tf' : True,
                     'base_frame_id' : 'base_footprint',
                     'odom_frame_id' : 'odom',
