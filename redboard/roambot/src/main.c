@@ -42,6 +42,7 @@
 
 // Temporary 
 #define DEBUG_SONAR 0
+#define NAV         1   // difference between a human and the lidar?
 
 //-----------------------------------------------------------------------------
 // Defines
@@ -103,7 +104,7 @@ void caution(uint32_t controls)
     {
         case UP:
             moveDown();             // Go backwards
-            waitMicrosecond(50000); // Allow the lidar time to assess
+            waitMicrosecond(3000000); // Allow the lidar time to assess
             stop_l = 0;
             stop_r = 0;
             break;
@@ -112,7 +113,7 @@ void caution(uint32_t controls)
             {
                 stop_l = 0;
                 moveDown();
-                waitMicrosecond(50000);
+                waitMicrosecond(3000000);
             }
             stop_l++;
             stop_r = 0;
@@ -126,7 +127,7 @@ void caution(uint32_t controls)
             {
                 stop_r = 0;
                 moveDown();
-                waitMicrosecond(50000);
+                waitMicrosecond(3000000);
             }
             stop_r++;
             stop_l = 0;
@@ -154,7 +155,7 @@ int main(void)
 #if (DEBUG_SONAR == 1)
         if ((echoTime0 < 800) || (echoTime1 < 800)) {
             moveStop();
-            waitMicrosecond(30000);
+            waitMicrosecond(3000000);
             caution(controls);
         }
 #endif
