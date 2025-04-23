@@ -21,12 +21,19 @@ class CmdVelToSerial(Node):
     def cmd_vel_callback(self, msg: Twist):
         self.last_cmd_time = self.get_clock().now()
 
-        if abs(msg.angular.z) > abs(msg.linear.x):
-            self.turn_left() if msg.angular.z > 0 else self.turn_right()
-        elif msg.linear.x != 0:
-            self.forward() if msg.linear.x > 0 else self.backward()
-        else:
-            self.stop()
+        linear_power = int(msg.linear.x * 63)
+        angular_power = int(msg.angular.z * 63)
+
+        # Differential drive logic
+        left_power = linear_power - angular_power
+        right_power = linear_power + angular_power
+
+        # Clamp values to -63 to 63
+        left_power = max(-63, min(63, left_power))
+        right_power = max(-63, min(63, right_power))
+
+        # Send power to each motor
+        self.send_serial(left_power, right_power, left_power, right_power)
 
     def check_timeout(self):
         time_since_last = (self.get_clock().now() - self.last_cmd_time).nanoseconds / 1e9
@@ -59,4 +66,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

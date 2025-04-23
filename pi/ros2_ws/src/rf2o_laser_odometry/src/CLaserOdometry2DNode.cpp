@@ -121,6 +121,8 @@ void CLaserOdometry2DNode::initPoseCallBack(const nav_msgs::msg::Odometry::Share
 
 void CLaserOdometry2DNode::publish()
 {
+
+  // const rclcpp::Time stamp = last_scan.header.stamp;
   //first, we'll publish the odometry over tf
   //---------------------------------------
 
@@ -134,6 +136,7 @@ void CLaserOdometry2DNode::publish()
   nav_msgs::msg::Odometry odom;
 
   odom.header.stamp = rf2o_ref.last_odom_time;
+  // odom.header.stamp = stamp;
   odom.header.frame_id = odom_frame_id;
   //set the position
   odom.pose.pose.position.x = rf2o_ref.robot_pose_.translation()(0);
@@ -153,6 +156,7 @@ void CLaserOdometry2DNode::publish()
     RCLCPP_DEBUG(get_logger(), "[rf2o] Publishing TF: [base_link] to [odom]");
     geometry_msgs::msg::TransformStamped odom_trans;
     odom_trans.header.stamp = rf2o_ref.last_odom_time;
+    // odom_trans.header.stamp = stamp;
     odom_trans.header.frame_id = odom_frame_id;
     odom_trans.child_frame_id = base_frame_id;
     odom_trans.transform.translation.x = rf2o_ref.robot_pose_.translation()(0);

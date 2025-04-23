@@ -27,7 +27,7 @@ import pygame
 ######################################################################
 
 def setup_serial():
-    return serial.Serial('/dev/ttyUSB1', 115200)
+    return serial.Serial('/dev/mcu', 115200)
 
 def clean_serial(ser):
     ser.close()
@@ -104,13 +104,13 @@ while running:
     if keys_count == 1:
         # Only one key pressed, check which one
         if keys[pygame.K_w]:
-            front_left = 9; front_right = 9; back_left = 8; back_right = 8;
+            front_left = 12; front_right = 12; back_left = 11; back_right = 11;
         elif keys[pygame.K_a]:
-            front_left = -20; front_right = 20; back_left = -20; back_right = 24;
+            front_left = -25; front_right = 25; back_left = -25; back_right = 29;
         elif keys[pygame.K_s]:
-            front_left = -8; front_right = -8; back_left = -9; back_right = -9;
+            front_left = -11; front_right = -11; back_left = -12; back_right = -12;
         elif keys[pygame.K_d]:
-            front_left = 20; front_right = -20; back_left = 20; back_right = -20;
+            front_left = 25; front_right = -25; back_left = 25; back_right = -25;
         else:
             front_left = 0; front_right = 0; back_left = 0; back_right = 0;
     else:
@@ -124,10 +124,11 @@ while running:
     pygame.display.flip()
 
     # Sleep
-    time.sleep(0.01)  # Sleep for 10ms
+    time.sleep(0.005)  # Sleep for 5ms
 
 # Clean up GPIO lines
 clean_serial(ser)
 
 # Quit pygame
 pygame.quit()
+

@@ -1,8 +1,15 @@
 #!/bin/bash
-# chmod +x nav.sh
+# chmod +x demo.sh
+
+# Start driver node
+ros2 run driver_ros2 cmd_vel_to_serial &
 
 # Give access to the LiDAR port
 sudo chmod 777 /dev/ttyUSB0
+sudo chmod 777 /dev/ttyUSB1
+
+sudo chmod 777 /dev/mcu
+sudo chmod 777 /dev/lidar
 
 # Start sllidar node
 ros2 launch sllidar_ros2 sllidar_a1_launch.py &
