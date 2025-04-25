@@ -5,6 +5,7 @@
   <xacro:arg name="use_mock_hardware" default="false" />
 
   <xacro:include filename="$(find ros2_control_demo_description)/diffbot/urdf/diffbot_description.urdf.xacro" />
+  <xacro:include filename="$(find ros2_control_demo_description)/diffbot/urdf/lidar.xacro" />
 
   <!-- Import Rviz colors -->
   <xacro:include filename="$(find ros2_control_demo_description)/diffbot/urdf/diffbot.materials.xacro" />

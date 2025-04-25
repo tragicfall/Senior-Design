@@ -13,11 +13,15 @@
           <param name="left_wheel_names">left_front_wheel_joint, left_rear_wheel_joint</param>
           <param name="right_wheel_names">right_front_wheel_joint, right_rear_wheel_joint</param>
           
-          <param name="loop_rate"></param> 
+          <param name="loop_rate">100</param> 
+          <!--^Temp value^ -->
+
           <param name="device"></param> 
           <param name="baud_rate">9600</param>
           <param name="timeout_ms">1000</param>  
-          <param name="enc_counts_per_rev"></param> 
+          <param name="enc_counts_per_rev">100</param> 
+          <!--^Temp value^ -->
+
           
         </hardware>
       </xacro:unless>
