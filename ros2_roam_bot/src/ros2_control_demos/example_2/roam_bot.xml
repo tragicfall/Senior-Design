@@ -1,0 +1,9 @@
+<library path="roam_bot">
+  <class name="roam_bot/RoamBotSystemHardware"
+         type="roam_bot::RoamBotSystemHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+
+    </description>
+  </class>
+</library>

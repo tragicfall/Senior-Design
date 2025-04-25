@@ -1,0 +1,46 @@
+[0.021s] Invoking command in '/home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ros2_senior/Senior-Design/ros2_roam_bot/src/ros2_control_demos/ros2_control_demo_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description
+[0.375s] -- The C compiler identification is GNU 13.3.0
+[2.252s] -- The CXX compiler identification is GNU 13.3.0
+[3.382s] -- Detecting C compiler ABI info
+[3.862s] -- Detecting C compiler ABI info - done
+[3.869s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.870s] -- Detecting C compile features
+[3.871s] -- Detecting C compile features - done
+[4.011s] -- Detecting CXX compiler ABI info
+[4.507s] -- Detecting CXX compiler ABI info - done
+[4.516s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[4.517s] -- Detecting CXX compile features
+[4.517s] -- Detecting CXX compile features - done
+[4.540s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[4.663s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[4.745s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.922s] -- Configuring done (4.8s)
+[4.928s] -- Generating done (0.0s)
+[4.930s] -- Build files have been written to: /home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description
+[4.938s] Invoked command in '/home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ros2_senior/Senior-Design/ros2_roam_bot/src/ros2_control_demos/ros2_control_demo_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description
+[4.940s] Invoking command in '/home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description -- -j8 -l8
+[4.977s] Invoked command in '/home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description -- -j8 -l8
+[4.988s] Invoking command in '/home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description
+[4.995s] -- Install configuration: ""
+[4.995s] -- Execute custom install script
+[4.997s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/urdf/diffbot.materials.xacro
+[5.007s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/urdf/diffbot_description.urdf.xacro
+[5.017s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/urdf/lidar.xacro
+[5.026s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/rviz/diffbot.rviz
+[5.037s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/rviz/diffbot_view.rviz
+[5.045s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ament_index/resource_index/package_run_dependencies/ros2_control_demo_description
+[5.053s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ament_index/resource_index/parent_prefix_path/ros2_control_demo_description
+[5.062s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/environment/ament_prefix_path.sh
+[5.070s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/environment/ament_prefix_path.dsv
+[5.077s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/environment/path.sh
+[5.084s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/environment/path.dsv
+[5.091s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/local_setup.bash
+[5.098s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/local_setup.sh
+[5.105s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/local_setup.zsh
+[5.111s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/local_setup.dsv
+[5.118s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/package.dsv
+[5.125s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ament_index/resource_index/packages/ros2_control_demo_description
+[5.132s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/cmake/ros2_control_demo_descriptionConfig.cmake
+[5.138s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/cmake/ros2_control_demo_descriptionConfig-version.cmake
+[5.144s] -- Symlinking: /home/ros2_senior/Senior-Design/ros2_roam_bot/install/ros2_control_demo_description/share/ros2_control_demo_description/package.xml
+[5.151s] Invoked command in '/home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ros2_senior/Senior-Design/ros2_roam_bot/build/ros2_control_demo_description
