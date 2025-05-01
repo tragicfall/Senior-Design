@@ -65,7 +65,7 @@ The microcontroller \cite{TM4C} is a hardware component responsible for processi
 
 \subsubsection{Subsystem Hardware}
 \begin{itemize}
-    \item TM4C RedBoard - A microcontroller with built-in UART and GPIO modules, responsible for processing motor control commands and handling sensor inputs (Figure \ref{fig:Movement Layer - Microcontroller Circuit}).
+    \item TM4C RedBoard - A microcontroller with built-in UART and GPIO modules, responsible for processing motor control commands and handling sensor inputs (Figure \ref{fig:Microcontroller Circuit}).
 \end{itemize}
 
 \subsubsection{Subsystem Software Dependencies}
@@ -76,12 +76,12 @@ The TM4C RedBoard firmware uses C to implement the communication protocols and t
 
 \subsubsection{Subsystem Data Structures}
 \begin{itemize}
-    \item (4x) 1-bit input GPIO control signals, one for each movement direction.
-    \item 8-bit control packets are sent via UART to regulate each motor. Each packet consists of a single byte representing motor-specific commands such as speed and direction. Transmission occurs at 9600 baud with 5V, 8N1 settings, controlling one motor per packet.
+    \item On the RX side, the microcontroller receives motor control data through a single UART RX line configured at 115200 baud with 5V, 8N1 serial settings. Each received packet consists of four consecutive 8-bit bytes, with each byte representing a command for one motor. The microcontroller interprets the bytes in the following order: front left, front right, back left, and back right. Each byte encodes speed and direction information for its respective motor.
+    \item On the TX side, the microcontroller forwards the received commands to two separate motor controllers using two dedicated UART TX lines, each operating at 9600 baud with 5V, 8N1 settings. The first two bytes corresponding to the front left and front right motors are transmitted via one TX line to the front motor controller. The last two bytes corresponding to the back left and back right motors are transmitted via the second TX line to the rear motor controller. This RX to TX routing allows the microcontroller to efficiently manage motor control while minimizing internal processing.
 \end{itemize}
 
 \subsubsection{Subsystem Data Processing}
-The microcontroller polls movement direction inputs every 100ms, capturing the required state and transmitting four motor control commands (one per motor).
+The microcontroller receives movement command packets every 10ms, capturing the required state and transmitting four motor control commands (one per motor).
 \newpage
 
 
@@ -101,7 +101,7 @@ The motor drivers \cite{Sabertooth} are hardware components that regulate power 
 
 \subsubsection{Subsystem Hardware}
 \begin{itemize}
-    \item Two Sabertooth 2x25 Motor Controllers - High-performance dual motor drivers that receive UART commands from the TM4C RedBoard. Each controller independently drives two motors, enabling precise movement control (Figure \ref{fig:Movement Layer - Motor Drivers Circuit}).
+    \item Two Sabertooth 2x25 Motor Controllers - High-performance dual motor drivers that receive UART commands from the TM4C RedBoard. Each controller independently drives two motors, enabling precise movement control (Figure \ref{fig:Motor Drivers Circuit}).
 \end{itemize}
 
 \subsubsection{Subsystem Data Structures}
@@ -110,7 +110,7 @@ The motor drivers \cite{Sabertooth} are hardware components that regulate power 
 \end{itemize}
 
 \subsubsection{Subsystem Data Processing}
-Each Sabertooth controller processes incoming UART packets every 100ms. Two packets (one per motor) are received per controller, spaced 50us apart to ensure proper sequencing and avoid command overlap.
+Each Sabertooth controller processes incoming UART packets every 10ms. Two packets (one per motor) are received per controller, spaced 50us apart to ensure proper sequencing and avoid command overlap.
 \newpage
 
 
@@ -160,4 +160,4 @@ The Sonar subsystem utilizes ultrasonic sensors to detect obstacles in the rover
 \end{itemize}
 
 \subsubsection{Subsystem Data Processing}
-The microcontroller sends a 10us pulse to the sensor's trigger pin, which causes the sensor to emit an ultrasonic wave. The time taken for the echo to return is measured to compute the distance. The system continuously polls the sensor at regular intervals (every 100ms) to update the obstacle detection distance. If an obstacle is detected within a defined threshold (50 cm), the rover will stop.
+The microcontroller sends a 10us pulse to the sensor's trigger pin, which causes the sensor to emit an ultrasonic wave. The time taken for the echo to return is measured to compute the distance. The system continuously polls the sensor at regular intervals (every 10ms) to update the obstacle detection distance. If an obstacle is detected within a defined threshold (50 cm), the rover will stop.

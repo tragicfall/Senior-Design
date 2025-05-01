@@ -1,9 +1,9 @@
-The interface subsystems of the RoamBot are responsible for processing user input and translating it into commands for the rover. These subsystems are implemented using C, C++, and Python and operate on the Raspberry Pi 5.
+The interface subsystems of the Roam\_Bot are responsible for processing user input and translating it into commands for the rover. These subsystems are implemented using C, C++, and Python and operate on the Raspberry Pi 5.
 
 %In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
 
 \subsection{Layer Hardware}
-The Raspberry Pi 5 serves as the core interface hardware for the RoamBot, providing robust computational power with its quad-core ARM Cortex-A76 processor and 16GB of LPDDR4x RAM. It efficiently handles real-time pathfinding and decision-making processes. Additionally, its USB 3.0 ports and GPIO pins allow for direct connection to sensors and motor controllers.
+The Raspberry Pi 5 serves as the core interface hardware for the Roam\_Bot, providing robust computational power with its quad-core ARM Cortex-A76 processor and 16GB of LPDDR4x RAM. It efficiently handles real-time pathfinding and decision-making processes. Additionally, its USB 3.0 ports and GPIO pins allow for direct connection to sensors and motor controllers.
 %%%%%%%%%%%%%%% DEFINE MORE HARDWARE
 
 \subsection{Layer Operating System}
@@ -35,7 +35,7 @@ The UI control subsystem processes incoming user commands to switch between manu
 \newpage
 
 \subsection{User Control}
-The User Control subsystem allows direct manipulation of the RoamBot's movement in real-time. It processes immediate user inputs, and translates the input into motion instructions. This subsystem ensures that users have precise control over speed and direction, allowing manual operation when needed.
+The User Control subsystem allows direct manipulation of the Roam\_Bot's movement in real-time. It processes immediate user inputs, and translates the input into motion instructions. This subsystem ensures that users have precise control over speed and direction, allowing manual operation when needed.
 
 \begin{figure}[h!]
 	\centering
@@ -52,7 +52,7 @@ User inputs are converted into structured motion commands that control the rover
 \newpage
 
 \subsection{Algorithm Upload}
-The Algorithm Upload subsystem allows users to upload pre-programmed pathfinding algorithms to enable autonomous navigation. It processes these algorithms and integrates them into the rover's control system, ensuring that the RoamBot can follow predefined paths without manual intervention.
+The Algorithm Upload subsystem allows users to upload pre-programmed pathfinding algorithms to enable autonomous navigation. It processes these algorithms and integrates them into the rover's control system, ensuring that the Roam\_Bot can follow predefined paths without manual intervention.
 
 \begin{figure}[h!]
 	\centering
