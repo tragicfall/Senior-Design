@@ -32,6 +32,6 @@
 // Subroutines
 //-----------------------------------------------------------------------------
 
-extern void waitMicrosecond(uint32_t us);
+extern void waitMicrosecond(uint32_t us); // Approximate busy waiting (in units of microseconds), given a 40 MHz system clock
 
 #endif

@@ -1,11 +1,10 @@
-# Install the package
+# Install the package (package is already provided from "pi/ros2_ws/src/driver_ros2")
 cd ~/ros2_ws/src
-git clone https://github.com/Slamtec/sllidar_ros2.git
 
 # Build the package
 cd ~/ros2_ws/
 source /opt/ros/jazzy/setup.bash
-colcon build --packages-select sllidar_ros2
+colcon build --packages-select driver_ros2
 OR
 rm -rf build/ install/ log/
 colcon build --symlink-install
@@ -13,5 +12,5 @@ colcon build --symlink-install
 # Source the Packages
 source ./install/setup.bash
 
-# Enable permissions for Lidar
-sudo chmod 777 /dev/lidar
+# Enable permissions for MCU
+sudo chmod 777 /dev/mcu

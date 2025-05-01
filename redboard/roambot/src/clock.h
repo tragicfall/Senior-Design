@@ -29,6 +29,6 @@
 // Subroutines
 //-----------------------------------------------------------------------------
 
-void initSystemClockTo40Mhz(void);
+void initSystemClockTo40Mhz(void); // Initialize system clock to 40 MHz using PLL and 16 MHz crystal oscillator
 
 #endif

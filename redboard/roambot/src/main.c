@@ -21,7 +21,7 @@
 // UART Outut Interface:
 //     U1TX (PB1) is connected to the 1st (front) controller
 //     U2TX (PD7) is connected to the 2nd (back) controller
-// Ultrasonic (will add a second sonar)
+// Ultrasonic Sensor Interface:
 //     ECHO0 PIN PD6
 //     TRIG0 PIN PB3
 //     ECHO1 PIN PC4
@@ -40,9 +40,7 @@
 #include "serial.h"
 #include "src/sonar.h"
 
-// Temporary 
-#define DEBUG_SONAR 0
-#define NAV         1   // difference between a human and the lidar?
+#define USE_SONAR 0
 
 //-----------------------------------------------------------------------------
 // Defines
@@ -67,6 +65,11 @@ void initHw(void)
     // Initialize Serial
     initSerial();
 
+    // Initialize Sonar
+#if (USE_SONAR == 1)
+    initSonar();
+#endif
+
     // Initialize Both UART
     initUart1();
     initUart2();
@@ -81,6 +84,7 @@ void initHw(void)
 // Interface Functions
 //-----------------------------------------------------------------------------
 
+// Use serial controls from the pi controller to move the wheels
 void move(uint32_t controls)
 {
     uint8_t frontLeft;
@@ -96,6 +100,7 @@ void move(uint32_t controls)
     moveWheels(frontLeft, frontRight, backLeft, backRight);
 }
 
+// Use the sonar to detect if the robot is too close to an object and move accordingly
 void caution(uint32_t controls)
 {
     static uint8_t stop_l = 0,
@@ -148,12 +153,12 @@ int main(void)
     // Initialize Hardware
     uint32_t controls;
     initHw();
-    initSonar();
     
     while(true)
     {   
-#if (DEBUG_SONAR == 1)
-        if ((echoTime0 < 800) || (echoTime1 < 800)) {
+#if (USE_SONAR == 1)
+        if ((echoTime0 < 800) || (echoTime1 < 800))
+        {
             moveStop();
             waitMicrosecond(3000000);
             caution(controls);
@@ -164,7 +169,6 @@ int main(void)
         waitMicrosecond(1000);
     }
 }
-
 
 /*
  * Controls go as normal until 800 detected. needs to be able to get itself out of trouble

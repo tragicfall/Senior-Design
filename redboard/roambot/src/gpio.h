@@ -38,7 +38,7 @@
 // Subroutines
 //-----------------------------------------------------------------------------
 
-void    initGPIO();
-uint8_t getControlsGPIO();
+void    initGPIO();        // Initialize GPIO Port D for detecting controls
+uint8_t getControlsGPIO(); // Get controls from GPIO Port D
 
 #endif

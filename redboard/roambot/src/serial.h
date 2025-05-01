@@ -36,8 +36,8 @@
 // Subroutines
 //-----------------------------------------------------------------------------
 
-void initSerial();
-void setUart3BaudRate(uint32_t baudRate, uint32_t fcyc);
-uint32_t getControlsSerial(uint32_t current_controls);
+void initSerial();                                       // Initialize UART3
+void setUart3BaudRate(uint32_t baudRate, uint32_t fcyc); // Set baud rate as function of instruction cycle frequency
+uint32_t getControlsSerial(uint32_t current_controls);   // Get controls from UART3
 
 #endif

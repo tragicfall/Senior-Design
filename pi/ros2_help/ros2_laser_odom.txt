@@ -1,15 +1,19 @@
-cd ros2_ws/src
+# Install the package
+cd ~ros2_ws/src
 git clone https://github.com/Adlink-ROS/rf2o_laser_odometry.git
-cd ..
 
+# Build the package
+cd ~/ros2_ws/
+source /opt/ros/jazzy/setup.bash
 colcon build --packages-select rf2o_laser_odometry
 OR
 rm -rf build/ install/ log/
 colcon build --symlink-install
 
-ros2 launch rf2o_laser_odometry rf2o_laser_odometry.launch.py
+# Source the Packages
+source ./install/setup.bash
 
-ros2 topic list
-ros2 topic echo /odom
+# Enable permissions for Lidar
+sudo chmod 777 /dev/lidar
 
 

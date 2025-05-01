@@ -28,7 +28,7 @@ sleep 2 && ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/ho
 sleep 2 && ros2 launch nav2_bringup navigation_launch.py use_sim_time:=false autostart:=true &
 
 # Start RViz with map view
-rviz2 -d /home/tlc/ros2_ws/opt/nav.rviz
+rviz2 -d /home/tlc/ros2_ws/opt/demo.rviz
 
 # Set traps to clean up when exiting (both EXIT and SIGINT)
 trap "echo 'Cleaning up...'; pkill -f ros2; exit" EXIT SIGINT

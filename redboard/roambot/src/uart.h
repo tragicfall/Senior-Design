@@ -37,19 +37,21 @@
 // Subroutines
 //-----------------------------------------------------------------------------
 
-void initUart1();
-void setUart1BaudRate(uint32_t baudRate, uint32_t fcyc);
-void putiUart1(uint32_t i);
+void initUart1();                                         // Initialize UART1 for 115200 baud rate, 8 data bits, no parity, 1 stop bit
+void setUart1BaudRate(uint32_t baudRate, uint32_t fcyc);  // Set the baud rate for UART1
+void putiUart1(uint32_t i);                               // Send an integer to UART1
 
-void initUart2();
-void setUart2BaudRate(uint32_t baudRate, uint32_t fcyc);
-void putiUart2(uint32_t i);
+void initUart2();                                         // Initialize UART2 for 115200 baud rate, 8 data bits, no parity, 1 stop bit
+void setUart2BaudRate(uint32_t baudRate, uint32_t fcyc);  // Set the baud rate for UART2
+void putiUart2(uint32_t i);                               // Send an integer to UART2
 
-void moveWheels(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t backRight);
-void moveUp();
-void moveLeft();
-void moveDown();
-void moveRight();
-void moveStop();
+// Move wheels with specified speed (0-255) for each wheel
+void moveWheels(uint8_t frontLeft, uint8_t frontRight, uint8_t backLeft, uint8_t backRight); 
+
+void moveUp();    // Move forward
+void moveLeft();  // Move left
+void moveDown();  // Move backward
+void moveRight(); // Move right
+void moveStop();  // Stop moving
 
 #endif
