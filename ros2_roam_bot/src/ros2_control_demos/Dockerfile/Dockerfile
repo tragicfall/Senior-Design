@@ -11,7 +11,7 @@ RUN apt-get update \
     apt-get autoremove -y -qq && \
     rm -rf /var/lib/apt/lists/*
 
-COPY . /home/ros2_ws/src/ros2_control_demos
+COPY . /home/ros2_ws/src/ros2_roam_bot
 
 RUN cd /home/ros2_ws/src \
     && rosdep update --rosdistro ${ROS_DISTRO}  \
@@ -27,7 +27,7 @@ RUN cd /home/ros2_ws/src \
 
 RUN cd /home/ros2_ws/ \
   && . /opt/ros/${ROS_DISTRO}/setup.sh \
-  && colcon build --cmake-args -DBUILD_TESTING=OFF --symlink-install --packages-up-to ros2_control_demos
+  && colcon build --cmake-args -DBUILD_TESTING=OFF --symlink-install --packages-up-to ros2_roam_bot
 
 COPY Dockerfile/entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

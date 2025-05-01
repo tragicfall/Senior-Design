@@ -15,3 +15,6 @@ Misc Installs:
 sudo apt install ros-jazzy-ros2-control 
 sudo apt ros-jazzy-ros2-controllers
 sudo apt install libserial-dev
+
+
+ros2 launch roam_bot diffbot.launch.py use_mock_hardware:=True

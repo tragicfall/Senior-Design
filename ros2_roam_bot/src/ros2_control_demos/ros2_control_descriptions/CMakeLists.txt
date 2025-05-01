@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ros2_control_demo_description)
+project(ros2_control_descriptions)
 
 find_package(ament_cmake REQUIRED)
 
