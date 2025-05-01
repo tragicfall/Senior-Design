@@ -13,6 +13,7 @@ Stores team-generated engineering documents including:
 - **SRS** (System Requirements Specification)
 - **ADS** (Architectural Design Specification)
 - **DDS** (Detailed Design Specification)
+- **Diagrams** Includes wiring diagrams and power architecture.
 
 These documents define the system design, planning, and requirements for Roambot.
 
@@ -32,3 +33,11 @@ Contains the ROS 2 simulation for Roambot. This folder includes the configuratio
 ---
 
 This top-level structure ensures separation of concerns between documentation, Pi-side ROS operations, and MCU control logic, as well as providing tools for simulation and testing.
+
+## Diagrams
+
+### Power System
+![Power System Diagram](documentation/diagrams/power_system.jpg)
+
+### Pin Connections
+![Pin Connections Diagram](documentation/diagrams/pin_connections.jpg)

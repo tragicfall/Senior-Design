@@ -9,5 +9,6 @@ Documents Included:
 2. **SRS** (System Requirements Specification): Outlines the functional and non-functional requirements of the system.
 3. **ADS** (Architectural Design Specification): Describes the system architecture, including component interactions and system design.
 4. **DDS** (Detailed Design Specification): Provides a more detailed design breakdown, including hardware and software components.
+5. **Diagrams** Includes wiring diagrams and power architecture.
 
 These documents are crucial for ensuring that the Roambot project is developed according to defined requirements and best practices.
