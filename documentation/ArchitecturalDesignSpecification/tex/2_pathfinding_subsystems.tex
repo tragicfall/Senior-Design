@@ -2,8 +2,8 @@
 
 The pathfinding subsystem manages the components or modules within a larger pathfinding system that handles specific aspects of the 
 
-\subsection{Grid Management Subsystem}
-The grid management subsystem allows the display of the LiDAR range as a grid of cells and allows them to be marked as either traversable or non-traversable, as needed.
+\subsection{Static Map Subsystem}
+The Obstacle Detection subsystem allows the display of the LiDAR range as a grid of cells and allows them to be marked as either traversable or non-traversable, as needed.
 
 % This section should be a general description of a particular subsystem for the given layer. For most subsystems, an extract of the architectural block diagram with data flows is useful. This should consist of the subsystem being described and those subsystems with which it communicates.
 
@@ -13,37 +13,34 @@ The grid management subsystem allows the display of the LiDAR range as a grid of
 %   and update the name from 'images/test_image' to your image name
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.80\textwidth]{images/pathfinding_images/GridManagement.jpeg}
- \caption{Pathfinding Subsystem - Grid Management} % Be sure to change the caption.
+ 	\includegraphics[width=0.80\textwidth]{images/pathfinding 2/Data_Flow_StaticMap.jpeg}
+ \caption{Pathfinding Subsystem - Static Map} % Be sure to change the caption.
 \end{figure}
 
 \subsubsection{Assumptions}
 % Any assumptions made in the definition of the subsystem should be listed and described. Pay particular attention to assumptions concerning interfaces and interactions with other layers.
 
-Grid management allows for the environment within the LiDAR range to be modeled to a graph or grid. All cells within in the grid shall either be marked as traversable or non-traversable depending on if an obstacle is within the cell. The grid will dynamically update itself once it nears the outer area of the grid or when new obstacles are introduced.
+Static Map assumes that the Obstacle Detection will be functional, and there will not be dynamic obstacles or other movement during pathfinding.
 \subsubsection{Responsibilities}
 % Each of the responsibilities/features/functions/services of the subsystem as identified in the architectural summary must be expanded to more detailed responsibilities. These responsibilities form the basis for the identification of the finer-grained responsibilities of the layer's internal subsystems. Clearly describe what each subsystem does.
 
-The pathfinding algorithm creates a grid representing the environment with the LiDAR Range. The grid will contain nodes that contain properties such as: 
-\begin{itemize}
-  \item Traverability (true/false).
-  \item Coordinates in world space.
-\end{itemize}
-The pathfinding algorithm will also covert world space coordinates to cells, and allow to update nodes during a terrain change.
+The static map creates a map using the SlamTec LiDAR to than feed into the Obstacle Detection Subystem, so that it can create a costmap.
 \subsubsection{Subsystem Interfaces}
 % Each of the inputs and outputs for the subsystem are defined here. Create a table with an entry for each labelled interface that connects to this subsystem. For each entry, describe any incoming and outgoing data elements will pass through this interface.
 
 \begin {table}[H]
-\caption {Pathfinding Subsystem - Grid Management} 
+\caption {Pathfinding Subsystem - Static Map} 
 \begin{center}
     \begin{tabular}{ | p{1.2cm} | p{6cm} | p{3cm} | p{3cm} |}
     \hline
     ID & Description & Inputs & Outputs \\ \hline
-    \#10/13 & Data that will create a cells within a grid & \pbox{3cm}{World Coordinates} & \pbox{3cm}{Node Data}  \\ \hline
+    \#12 & Data will convert Laser Scan into a Map & \pbox{3cm}{N/A} & \pbox{3cm}{Map (.yaml file) }  \\ \hline
 
     \end{tabular}
 \end{center}
 \end{table}
+
+\newpage
 
 \subsection{Obstacle Detection Subsystems}
 The obstacle detection subsystem is designed to process feedback from the LiDAR, identifying objects within its range and marking them as impassable when necessary.
@@ -52,7 +49,7 @@ The obstacle detection subsystem is designed to process feedback from the LiDAR,
 %   and update the name from 'images/test_image' to your image name
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/pathfinding_images/ObstacleDetection.jpeg}
+ 	\includegraphics[width=0.60\textwidth]{images/pathfinding 2/Data_Flow_ObstacleD.jpeg}
  \caption{Pathfinding Subsystem - Obstacle Detection} % Be sure to change the caption.
 \end{figure}
 
@@ -64,6 +61,11 @@ The rover will be able to register static and dynamic obstacles and be detected 
 
 The rover will be able to detect obstacles and update the graph representation Subsystem by marking a cell as untraversable. The obstacle detection subsystem should also be able to be integrated with LiDAR and other sensors. If the close-range sensors get triggered the rover should halt movement and retreat a set distance before reactivating its pathfinding.
 
+The pathfinding algorithm creates a grid using the map the static map subsystem provided, representing the environment with the LiDAR Range. The grid will contain nodes that contain properties such as: 
+\begin{itemize}
+  \item Traverability (true/false).
+  \item Coordinates in world space.
+\end{itemize}
 \subsubsection{Subsystem Interfaces}
 % Each of the inputs and outputs for the subsystem are defined here. Create a table with an entry for each labelled interface that connects to this subsystem. For each entry, describe any incoming and outgoing data elements will pass through this interface.
 
@@ -79,6 +81,9 @@ The rover will be able to detect obstacles and update the graph representation S
 \end{center}
 \end{table}
 
+
+\newpage
+
 \subsection{Navigation Subsystems}
 The pathfinding subsystem is designed to give the Roam\_Bot the ability to traverse the terrain and reach the desired terrain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,7 +91,7 @@ The pathfinding subsystem is designed to give the Roam\_Bot the ability to trave
 %   and update the name from 'images/test_image' to your image name
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/pathfinding_images/Navigation.jpeg}
+ 	\includegraphics[width=0.60\textwidth]{images/pathfinding 2/Data_Flow_Navigation.jpeg}
  \caption{Pathfinding Subsystem - Navigation} % Be sure to change the caption.
 \end{figure}
 
@@ -113,25 +118,31 @@ The pathfinding algorithm calculates either the optimal or heuristic-based path 
 \end{center}
 \end{table}
 
-\subsection{LiDAR Subsystems}
+\subsection{Live LiDAR Data Subsystems}
 The LiDAR subsystem is designed to give the Roam\_Bot the ability to see the desired terrain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Change the graphic here. Put your image in the 'images' folder
 %   and update the name from 'images/test_image' to your image name
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/pathfinding_images/LiDAR.jpeg}
- \caption{Pathfinding Subsystem - LiDAR} % Be sure to change the caption.
+ 	\includegraphics[width=0.60\textwidth]{images/pathfinding 2/Data_Flow_LiveLiDAR.jpeg}
+ \caption{Pathfinding Subsystem - Live LiDAR Data} % Be sure to change the caption.
 \end{figure}
 
 \subsubsection{Assumptions}
 % Any assumptions made in the definition of the subsystem should be listed and described. Pay particular attention to assumptions concerning interfaces and interactions with other layers.
+\begin{itemize}
+    \item Static Obstacles are Detected Within Range
+    \item Robot Operates on a Relatively Flat Plane
+    \item Costmap is Regularly Updated with LiDAR Data
+    \item No Excessive Sensor Noise or Clutter
+\end{itemize}
 
 The LiDAR subsystem requires that the Roam\_Bot be turned on.
 \subsubsection{Responsibilities}
 % Each of the responsibilities/features/functions/services of the subsystem as identified in the architectural summary must be expanded to more detailed responsibilities. These responsibilities form the basis for the identification of the finer-grained responsibilities of the layer's internal subsystems. Clearly describe what each subsystem does.
 
-The LiDAR subsystem takes the input given by its senses and sends all relavant information to the Grid Management, and Obstacle Detection subsystems as well as the TM4C system.
+The LiDAR subsystem takes the input given by its senses and sends all relavant information to the Onstacle Detection subsystem which creates a costmap.
 
 \subsubsection{Subsystem Interfaces}
 
@@ -144,12 +155,104 @@ The LiDAR subsystem takes the input given by its senses and sends all relavant i
     \begin{tabular}{ | p{1cm} | p{6cm} | p{3cm} | p{3cm} |}
     \hline
     ID & Description & Inputs & Outputs \\ \hline
-    \#13 &  The LiDAR subsystem will transmit video data to the Grid Management subsystem, which will process the input, convert it into a structured grid, and divide it into individual cells for further analysis.
-    & \pbox{3cm}{Navigation} & \pbox{3cm}{Data to TM4C (Microcontroller)}  \\ \hline
-    \#12 & 
-    The LiDAR subsystem will transmit video data to the Obstacle Detection subsystem, which will analyze the input to identify and classify areas as either obstacles or traversable terrain.
-    & \pbox{3cm}{N/A} & \pbox{3cm}{Data to TM4C (Microcontroller)}  \\ \hline
-    \#4 & LiDAR will feed accumlated infromation to TM4C (microcontroller)& \pbox{3cm}{Data from Navigation} & \pbox{3cm}{Data to TM4C (Microcontroller)}  \\ \hline
+    \#13 &  The LiDAR subsystem will transmit laser scan data to the Obstacle Detection subsystem, which will process the input, convert it into a structured grid, and divide it into individual cells for further analysis.
+    & \pbox{3cm}{N/A} & \pbox{3cm}{Obstacle Detection}  \\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\newpage
+\subsection{Robot Position Estimate Subsystem}
+The Obstacle Detection subsystem allows the display of the LiDAR range as a grid of cells and allows them to be marked as either traversable or non-traversable, as needed.
+
+% This section should be a general description of a particular subsystem for the given layer. For most subsystems, an extract of the architectural block diagram with data flows is useful. This should consist of the subsystem being described and those subsystems with which it communicates.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Change the graphic here. Put your image in the 'images' folder
+%   and update the name from 'images/test_image' to your image name
+\begin{figure}[h!]
+	\centering
+ 	\includegraphics[width=0.80\textwidth]{images/pathfinding 2/Data_Flow_RobotPosition.jpeg}
+ \caption{Pathfinding Subsystem - Robot Position Estimate} % Be sure to change the caption.
+\end{figure}
+
+\subsubsection{Assumptions}
+% Any assumptions made in the definition of the subsystem should be listed and described. Pay particular attention to assumptions concerning interfaces and interactions with other layers.
+
+Static Map allows for the environment within the LiDAR range to be modeled to a grid. All cells within in the grid shall either be marked as traversable or non-traversable depending on if an obstacle is within the cell, by the Obstacle Detection Subsystem
+
+Static Map assumes that the Raspberry Pi is working and can utilize the static map for Obstacle Detection to create a cost 
+\subsubsection{Responsibilities}
+% Each of the responsibilities/features/functions/services of the subsystem as identified in the architectural summary must be expanded to more detailed responsibilities. These responsibilities form the basis for the identification of the finer-grained responsibilities of the layer's internal subsystems. Clearly describe what each subsystem does.
+
+The pathfinding algorithm creates a grid representing the environment with the LiDAR Range. The grid will contain nodes that contain properties such as: 
+\begin{itemize}
+  \item Traverability (true/false).
+  \item Coordinates in world space.
+\end{itemize}
+The pathfinding algorithm will also covert world space coordinates to cells, and allow to update nodes during a terrain change.
+\subsubsection{Subsystem Interfaces}
+% Each of the inputs and outputs for the subsystem are defined here. Create a table with an entry for each labelled interface that connects to this subsystem. For each entry, describe any incoming and outgoing data elements will pass through this interface.
+
+\begin {table}[H]
+\caption {Pathfinding Subsystem - Robot Position Estimate} 
+\begin{center}
+    \begin{tabular}{ | p{1.2cm} | p{6cm} | p{3cm} | p{3cm} |}
+    \hline
+    ID & Description & Inputs & Outputs \\ \hline
+    \#10/13 & Data that will create a cells within a grid & \pbox{3cm}{World Coordinates} & \pbox{3cm}{Node Data}  \\ \hline
+
+    \end{tabular}
+\end{center}
+\end{table}
+
+\newpage
+
+\subsection{SLAM}
+The Obstacle Detection subsystem allows the display of the LiDAR range as a grid of cells and allows them to be marked as either traversable or non-traversable, as needed.
+
+% This section should be a general description of a particular subsystem for the given layer. For most subsystems, an extract of the architectural block diagram with data flows is useful. This should consist of the subsystem being described and those subsystems with which it communicates.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Change the graphic here. Put your image in the 'images' folder
+%   and update the name from 'images/test_image' to your image name
+\begin{figure}[h!]
+	\centering
+ 	\includegraphics[width=0.80\textwidth]{images/pathfinding 2/Data_Flow_SLAM.jpeg}
+ \caption{Pathfinding Subsystem - SLAM} % Be sure to change the caption.
+\end{figure}
+
+\subsubsection{Assumptions}
+% Any assumptions made in the definition of the subsystem should be listed and described. Pay particular attention to assumptions concerning interfaces and interactions with other layers.
+\begin{itemize}
+    \item ROS2 Jazzy is installed on the Raspberry Pi 5
+    \item Nav2 Jazzy is installed on the Raspberry Pi 5
+    \item The Static Map is locatable on the Raspberry Pi 5
+    \item Robot operates on a relatively flat plane
+\end{itemize}
+\subsubsection{Responsibilities}
+% Each of the responsibilities/features/functions/services of the subsystem as identified in the architectural summary must be expanded to more detailed responsibilities. These responsibilities form the basis for the identification of the finer-grained responsibilities of the layer's internal subsystems. Clearly describe what each subsystem does.
+
+The responsibilites that SLAM uses is:
+\begin{itemize}
+  \item Real-Time Map Building: (Mapping) Continuously generates a 2D or 3D map of the environment based on sensor data (typically LiDAR or depth camera).
+  \item Robot Localization: Estimates the robot's pose (x, y, θ) in the global map frame in real time. Uses scan matching or visual feature matching to align sensor data with the evolving map.
+\end{itemize}
+\subsubsection{Subsystem Interfaces}
+% Each of the inputs and outputs for the subsystem are defined here. Create a table with an entry for each labelled interface that connects to this subsystem. For each entry, describe any incoming and outgoing data elements will pass through this interface.
+
+\begin {table}[H]
+\caption {Pathfinding Subsystem - SLAM} 
+\begin{center}
+    \begin{tabular}{ | p{1.2cm} | p{6cm} | p{3cm} | p{3cm} |}
+    \hline
+    ID & Description & Inputs & Outputs \\ \hline
+    \#10 & Slam's localization function outputs the robot's position estimate & \pbox{3cm}{World Coordinates} & \pbox{3cm}{Node Data}  \\ \hline
+
     \end{tabular}
 \end{center}
 \end{table}
