@@ -37,7 +37,7 @@ This top-level structure ensures separation of concerns between documentation, P
 ## Diagrams
 
 ### Power System
-![Power System Diagram](documentation/diagrams/power_system.jpg)
+![Power System Diagram](documentation/Diagrams/power_system.jpg)
 
 ### Pin Connections
-![Pin Connections Diagram](documentation/diagrams/pin_connections.jpg)
+![Pin Connections Diagram](documentation/Diagrams/pin_connections.jpg)
