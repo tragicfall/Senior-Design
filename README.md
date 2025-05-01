@@ -41,3 +41,6 @@ This top-level structure ensures separation of concerns between documentation, P
 
 ### Pin Connections
 ![Pin Connections Diagram](documentation/Diagrams/pin_connections.jpg)
+
+## 📽️ Roambot Demo Video
+[![Roambot Demo](https://img.youtube.com/vi/7T2_9MCSauM/0.jpg)](https://youtu.be/7T2_9MCSauM)
