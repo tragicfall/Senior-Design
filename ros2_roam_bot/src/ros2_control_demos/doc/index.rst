@@ -1,12 +1,12 @@
-:github_url: https://github.com/ros-controls/ros2_control_demos/blob/{REPOS_FILE_BRANCH}/doc/index.rst
+:github_url: https://github.com/ros-controls/ros2_roam_bot/blob/{REPOS_FILE_BRANCH}/doc/index.rst
 
-.. _ros2_control_demos:
+.. _ros2_roam_bot:
 
 #################
 Demos
 #################
 
-This `GitHub Repository <https://github.com/ros-controls/ros2_control_demos>`_
+This `GitHub Repository <https://github.com/ros-controls/ros2_roam_bot>`_
 provides templates for the development of ``ros2_control``-enabled robots and simple simulations to demonstrate and prove ``ros2_control`` concepts.
 
 If you want to have a rather step by step manual how to do things with ``ros2_control`` checkout `ros-control/roscon2022_workshop <https://github.com/ros-controls/roscon2022_workshop>`_ repository.
@@ -88,7 +88,7 @@ Example 15: "Using multiple controller managers"
 Example 16: "DiffBot with chained controllers"
    This example shows how to create chained controllers using diff_drive_controller and pid_controllers to control a differential drive robot.
 
-.. _ros2_control_demos_install:
+.. _ros2_roam_bot_install:
 
 =====================
 Installation
@@ -100,7 +100,7 @@ You can install the demos locally or use the provided docker file.
 Local installation
 ------------------
 
-If you have ROS 2 installed already, choose the right version of this documentation and branch of the ``ros2_control_demos`` repository matching you ROS 2 distribution, see `this table <https://github.com/ros-controls/ros2_control_demos#build-status>`__.
+If you have ROS 2 installed already, choose the right version of this documentation and branch of the ``ros2_roam_bot`` repository matching you ROS 2 distribution, see `this table <https://github.com/ros-controls/ros2_roam_bot#build-status>`__.
 
 Otherwise, install `ROS 2 {DISTRO} on your computer <https://docs.ros.org/en/{DISTRO}/Installation.html>`__.
 
@@ -113,13 +113,13 @@ Otherwise, install `ROS 2 {DISTRO} on your computer <https://docs.ros.org/en/{DI
 Build from debian packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Download the ``ros2_control_demos`` repository and install its dependencies with
+Download the ``ros2_roam_bot`` repository and install its dependencies with
 
 .. code-block:: shell
 
   mkdir -p ~/ros2_ws/src
   cd ~/ros2_ws/src
-  git clone https://github.com/ros-controls/ros2_control_demos -b {REPOS_FILE_BRANCH}
+  git clone https://github.com/ros-controls/ros2_roam_bot -b {REPOS_FILE_BRANCH}
   cd ~/ros2_ws/
   sudo apt-get update
   rosdep update --rosdistro=$ROS_DISTRO
@@ -143,9 +143,9 @@ Build from source
 
     mkdir -p ~/ros2_ws/src
     cd ~/ros2_ws/src
-    git clone https://github.com/ros-controls/ros2_control_demos
+    git clone https://github.com/ros-controls/ros2_roam_bot
     cd ~/ros2_ws/
-    vcs import src < src/ros2_control_demos/ros2_control_demos.$ROS_DISTRO.repos
+    vcs import src < src/ros2_roam_bot/ros2_roam_bot.$ROS_DISTRO.repos
     rosdep update --rosdistro=$ROS_DISTRO
     sudo apt-get update
 
@@ -180,9 +180,9 @@ First, build the dockerfile with
 
   mkdir -p ~/ros2_ws/src
   cd ~/ros2_ws/src
-  git clone https://github.com/ros-controls/ros2_control_demos
-  cd ros2_control_demos
-  docker build . -t ros2_control_demos -f Dockerfile/Dockerfile
+  git clone https://github.com/ros-controls/ros2_roam_bot
+  cd ros2_roam_bot
+  docker build . -t ros2_roam_bot -f Dockerfile/Dockerfile
 
 To view the robot
 ^^^^^^^^^^^^^^^^^
@@ -199,7 +199,7 @@ Then we are ready to bring up all the components to view the robot. Let's start 
 
 .. code-block:: shell
 
-  docker run -it --rm --name ros2_control_demos --net host ros2_control_demos ros2 launch ros2_control_demo_example_1 view_robot.launch.py gui:=false
+  docker run -it --rm --name ros2_roam_bot --net host ros2_roam_bot ros2 launch ros2_control_demo_example_1 view_robot.launch.py gui:=false
 
 .. note::
 
@@ -220,7 +220,7 @@ Terminal 2:
 
   source /opt/ros/${ROS_DISTRO}/setup.bash
   cd ~/ros2_ws
-  rviz2 -d src/ros2_control_demos/ros2_control_demo_description/rrbot/rviz/rrbot.rviz
+  rviz2 -d src/ros2_roam_bot/ros2_control_descriptions/rrbot/rviz/rrbot.rviz
 
 Now, you can see the robot moving by changing the values of the joints by moving the sliders around in the ``joint_state_publisher_gui``.
 
@@ -231,7 +231,7 @@ The following command runs the demo without the GUI:
 
 .. code-block:: shell
 
-  docker run -it --rm --name ros2_control_demos --net host ros2_control_demos
+  docker run -it --rm --name ros2_roam_bot --net host ros2_roam_bot
 
 .. note::
 
@@ -243,19 +243,19 @@ Then on your local machine, you can run rviz2 with the config file specified:
 
   cd ~/ros2_ws
   source /opt/ros/${ROS_DISTRO}/setup.sh
-  rviz2 -d src/ros2_control_demos/ros2_control_demo_description/rrbot/rviz/rrbot.rviz
+  rviz2 -d src/ros2_roam_bot/ros2_control_descriptions/rrbot/rviz/rrbot.rviz
 
 You can also run other commands or launch files from the docker, e.g.
 
 .. code-block:: shell
 
-  docker run -it --rm --name ros2_control_demos --net host ros2_control_demos ros2 launch roam_bot diffbot.launch.py
+  docker run -it --rm --name ros2_roam_bot --net host ros2_roam_bot ros2 launch roam_bot diffbot.launch.py
 
 or launch a second terminal inside the docker container by
 
 .. code-block:: shell
 
-  docker exec -it ros2_control_demos bash
+  docker exec -it ros2_roam_bot bash
 
 =====================
 Quick Hints
@@ -281,7 +281,7 @@ Examples
    :titlesonly:
 
    Example 1: RRBot <../example_1/doc/userdoc.rst>
-   Example 2: DiffBot <../example_2/doc/userdoc.rst>
+   Example 2: DiffBot <../roam_bot/doc/userdoc.rst>
    Example 3: RRBot with multiple interfaces <../example_3/doc/userdoc.rst>
    Example 4: Industrial robot with integrated sensor <../example_4/doc/userdoc.rst>
    Example 5: Industrial robots with externally connected sensor <../example_5/doc/userdoc.rst>

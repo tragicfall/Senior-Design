@@ -1,6 +1,6 @@
-:github_url: https://github.com/ros-controls/ros2_control_demos/blob/{REPOS_FILE_BRANCH}/example_2/doc/userdoc.rst
+:github_url: https://github.com/ros-controls/ros2_roam_bot/blob/{REPOS_FILE_BRANCH}/roam_bot/doc/userdoc.rst
 
-.. _ros2_control_demos_example_2_userdoc:
+.. _ros2_roam_bot_roam_bot_userdoc:
 
 *********
 DiffBot
@@ -9,7 +9,7 @@ DiffBot
 *DiffBot*, or ''Differential Mobile Robot'', is a simple mobile base with differential drive.
 The robot is basically a box moving according to differential drive kinematics.
 
-For *example_2*, the hardware interface plugin is implemented having only one interface.
+For *roam_bot*, the hardware interface plugin is implemented having only one interface.
 
 * The communication is done using proprietary API to communicate with the robot control box.
 * Data for all joints is exchanged at once.
@@ -155,7 +155,7 @@ Tutorial steps
                 left_wheel_joint/velocity [available] [claimed]
                 right_wheel_joint/velocity [available] [claimed]
 
-  You see that a different plugin was loaded. Having a look into the `diffbot.ros2_control.xacro <https://github.com/ros-controls/ros2_control_demos/tree/{REPOS_FILE_BRANCH}/example_2/description/ros2_control/diffbot.ros2_control.xacro>`__, one can find the
+  You see that a different plugin was loaded. Having a look into the `diffbot.ros2_control.xacro <https://github.com/ros-controls/ros2_roam_bot/tree/{REPOS_FILE_BRANCH}/roam_bot/description/ros2_control/diffbot.ros2_control.xacro>`__, one can find the
   instructions to load this plugin together with the parameter ``calculate_dynamics``.
 
   .. code-block:: xml
@@ -174,16 +174,16 @@ Tutorial steps
 Files used for this demos
 --------------------------
 
-* Launch file: `diffbot.launch.py <https://github.com/ros-controls/ros2_control_demos/tree/{REPOS_FILE_BRANCH}/example_2/bringup/launch/diffbot.launch.py>`__
-* Controllers yaml: `diffbot_controllers.yaml <https://github.com/ros-controls/ros2_control_demos/tree/{REPOS_FILE_BRANCH}/example_2/bringup/config/diffbot_controllers.yaml>`__
-* URDF file: `diffbot.urdf.xacro <https://github.com/ros-controls/ros2_control_demos/tree/{REPOS_FILE_BRANCH}/example_2/description/urdf/diffbot.urdf.xacro>`__
+* Launch file: `diffbot.launch.py <https://github.com/ros-controls/ros2_roam_bot/tree/{REPOS_FILE_BRANCH}/roam_bot/bringup/launch/diffbot.launch.py>`__
+* Controllers yaml: `diffbot_controllers.yaml <https://github.com/ros-controls/ros2_roam_bot/tree/{REPOS_FILE_BRANCH}/roam_bot/bringup/config/diffbot_controllers.yaml>`__
+* URDF file: `diffbot.urdf.xacro <https://github.com/ros-controls/ros2_roam_bot/tree/{REPOS_FILE_BRANCH}/roam_bot/description/urdf/diffbot.urdf.xacro>`__
 
-  * Description: `diffbot_description.urdf.xacro <https://github.com/ros-controls/ros2_control_demos/tree/{REPOS_FILE_BRANCH}/ros2_control_demo_description/diffbot/urdf/diffbot_description.urdf.xacro>`__
-  * ``ros2_control`` tag: `diffbot.ros2_control.xacro <https://github.com/ros-controls/ros2_control_demos/tree/{REPOS_FILE_BRANCH}/example_2/description/ros2_control/diffbot.ros2_control.xacro>`__
+  * Description: `diffbot_description.urdf.xacro <https://github.com/ros-controls/ros2_roam_bot/tree/{REPOS_FILE_BRANCH}/ros2_control_descriptions/diffbot/urdf/diffbot_description.urdf.xacro>`__
+  * ``ros2_control`` tag: `diffbot.ros2_control.xacro <https://github.com/ros-controls/ros2_roam_bot/tree/{REPOS_FILE_BRANCH}/roam_bot/description/ros2_control/diffbot.ros2_control.xacro>`__
 
-* RViz configuration: `diffbot.rviz <https://github.com/ros-controls/ros2_control_demos/tree/{REPOS_FILE_BRANCH}/ros2_control_demo_description/diffbot/rviz/diffbot.rviz>`__
+* RViz configuration: `diffbot.rviz <https://github.com/ros-controls/ros2_roam_bot/tree/{REPOS_FILE_BRANCH}/ros2_control_descriptions/diffbot/rviz/diffbot.rviz>`__
 
-* Hardware interface plugin: `diffbot_system.cpp <https://github.com/ros-controls/ros2_control_demos/tree/{REPOS_FILE_BRANCH}/example_2/hardware/diffbot_system.cpp>`__
+* Hardware interface plugin: `diffbot_system.cpp <https://github.com/ros-controls/ros2_roam_bot/tree/{REPOS_FILE_BRANCH}/roam_bot/hardware/diffbot_system.cpp>`__
 
 
 Controllers from this demo

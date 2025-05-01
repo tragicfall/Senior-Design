@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>ros2_control_demos</name>
+  <name>ros2_roam_bot</name>
   <version>0.0.0</version>
   <description>Metapackage for `ros2_control` demos packages</description>
 
